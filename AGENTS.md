@@ -20,6 +20,8 @@ Obsidian vault = **repo root**. Links use `[[wikilinks]]`. Every child note link
 | אימון / אימון קריאה / חלון האימון | [[docs/screens/Practice Reading]] |
 | מסמיך / חלון המסמיך | [[docs/screens/Masmich]] |
 | בחירת קטע / פרשה / עלייה | [[docs/screens/First Window]] + [[docs/features/Parashot and Aliyot]] |
+| הגדרות | [[docs/screens/Settings]] |
+| סימני יד / ירושלמי / טעמים ספרדים | [[docs/screens/Masmich]] + [[docs/features/Jerusalem Hand Signs]] + [[docs/screens/Settings]] |
 
 ## Tree (short)
 
@@ -27,8 +29,10 @@ Obsidian vault = **repo root**. Links use `[[wikilinks]]`. Every child note link
 AGENTS.md
 └── index.md
     ├── docs/features/Parashot and Aliyot
+    ├── docs/features/Jerusalem Hand Signs     ← מסמיך, ירושלמי
     └── docs/screens/Screens Index
         ├── docs/screens/First Window          ← בחירה בלבד
+        │   └── docs/screens/Settings          ← הגדרות (עדיין לא בקוד)
         └── docs/screens/Reading Window
             ├── docs/screens/Practice Reading  ← אימון קריאה
             └── docs/screens/Masmich           ← מסמיך
@@ -47,3 +51,5 @@ AGENTS.md
 | Scope | 21 books only (not איוב, משלי, תהלים) |
 | Direction | RTL everywhere (`Directionality.rtl`) |
 | First window | Passage picker (sefer / parasha / aliyah, remembered) + practice vs מסמיך. [[docs/screens/First Window]] |
+| Settings | Masmich sign pack (א+taam / name / photos), preview full set, upload, remembered until changed. Not built yet. [[docs/screens/Settings]] |
+| Masmich signs | Sephardi names, Jerusalem right hand. Three packs; default pack 3 uses placeholder hand until GIFs. [[docs/features/Jerusalem Hand Signs]] |

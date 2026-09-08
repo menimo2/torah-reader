@@ -9,6 +9,7 @@
 ```
 Screens Index          ← you are here
 ├── First Window       ← חלון ראשי, בחירה בלבד
+│   └── Settings       ← הגדרות (עדיין לא בקוד)
 └── Reading Window     ← שני חלונות המלל
     ├── Practice Reading   ← אימון קריאה
     └── Masmich            ← מסמיך
@@ -19,5 +20,6 @@ Screens Index          ← you are here
 | בשיחה | קובץ |
 |---|---|
 | חלון ראשי / הבית | [[docs/screens/First Window]] |
+| הגדרות | [[docs/screens/Settings]] |
 | אימון / אימון קריאה | [[docs/screens/Practice Reading]] |
 | מסמיך | [[docs/screens/Masmich]] |

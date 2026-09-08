@@ -29,6 +29,7 @@ flutter:
     - assets/fonts/EzraSIL-OFL.txt
     - assets/data/parashot.json
     - assets/data/NOTICE
+    - assets/signs/jerusalem/
   fonts:
     - family: EzraSIL
       fonts:

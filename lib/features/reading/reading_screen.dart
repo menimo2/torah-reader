@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/hand_signs.dart';
 import '../../core/hebrew_numerals.dart';
 import '../../core/parashot.dart';
 import '../../core/reading_mode.dart';
@@ -96,7 +97,41 @@ class ReadingScreen extends ConsumerWidget {
               ),
             ),
           ),
+          if (!isPractice) const MasmichHandPanel(),
         ],
+      ),
+    );
+  }
+}
+
+class MasmichHandPanel extends StatelessWidget {
+  const MasmichHandPanel({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      elevation: 6,
+      color: Theme.of(context).colorScheme.surface,
+      child: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'סימן יד · ${JerusalemHandSigns.packName}',
+                style: Theme.of(context).textTheme.labelLarge,
+              ),
+              const SizedBox(height: 8),
+              Image.asset(
+                JerusalemHandSigns.defaultAsset,
+                height: 120,
+                fit: BoxFit.contain,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
