@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/hebrew_numerals.dart';
 import '../../core/parashot.dart';
 import '../../core/reading_mode.dart';
 import '../../data/models/torah_verse.dart';
@@ -89,6 +90,7 @@ class ReadingScreen extends ConsumerWidget {
                   return TorahChapterView(
                     verses: data,
                     version: shown,
+                    hebrewRefs: isPractice,
                   );
                 },
               ),
@@ -105,10 +107,12 @@ class TorahChapterView extends StatelessWidget {
     super.key,
     required this.verses,
     required this.version,
+    this.hebrewRefs = false,
   });
 
   final List<TorahVerse> verses;
   final TextVersion version;
+  final bool hebrewRefs;
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +137,9 @@ class TorahChapterView extends StatelessWidget {
             TextSpan(
               children: [
                 TextSpan(
-                  text: '${verse.chapter}:${verse.verse}  ',
+                  text: hebrewRefs
+                      ? '${hebrewChapterVerse(verse.chapter, verse.verse)}  '
+                      : '${verse.chapter}:${verse.verse}  ',
                   style: textStyle.copyWith(
                     fontSize: 15,
                     color: Theme.of(context).colorScheme.primary,

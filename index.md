@@ -19,6 +19,8 @@ AGENTS.md
     └── docs/screens/Screens Index
         ├── docs/screens/First Window
         └── docs/screens/Reading Window
+            ├── docs/screens/Practice Reading
+            └── docs/screens/Masmich
 ```
 
 חלונות: [[docs/screens/Screens Index]]
@@ -84,7 +86,7 @@ AGENTS.md
 - **אין טקסט תורה** בחלון הזה — רק בחירה
 - **למעלה משמאל:** איקון הגדרות (מסך עדיין לא)
 - **אמצע:** כפתור «מה קוראים» → ספר / פרשה / עלייה [[docs/features/Parashot and Aliyot]]
-- **מתחת:** **אימון קריאה** / **מסמיך** → פותחים את [[docs/screens/Reading Window]]
+- **מתחת:** **אימון קריאה** → [[docs/screens/Practice Reading]] · **מסמיך** → [[docs/screens/Masmich]]
 
 ---
 
@@ -128,7 +130,8 @@ AGENTS.md
 [[docs/screens/First Window]]     ← בלי טקסט
 ├── הגדרות (איקון, שמאל) — עדיין לא
 ├── כפתור קטע: ספר → פרשה → עלייה
-└── אימון קריאה / מסמיך → [[docs/screens/Reading Window]]
+└── אימון קריאה → [[docs/screens/Practice Reading]]
+    מסמיך → [[docs/screens/Masmich]]
 ```
 
 ---
@@ -216,9 +219,8 @@ Timer _advanceWord() {
     ↓
 [[docs/screens/First Window]]  (בחירה בלבד)
     ├── כפתור קטע: ספר → פרשה → עלייה
-    └── אימון / מסמיך
-            ↓
-    [[docs/screens/Reading Window]]  (כאן הטקסט)
+    └── אימון → [[docs/screens/Practice Reading]]
+        מסמיך → [[docs/screens/Masmich]]
 ```
 
 ---
@@ -227,7 +229,7 @@ Timer _advanceWord() {
 
 1. **כיוון טקסט:** RTL לאורך כל האפליקציה — `Directionality.rtl`
 2. **גופן:** חייב להיות מוטמע כ-asset, לא נטען מהרשת
-3. **הצצה בעירום:** לחיצה על אזור הטקסט לשנייה וחצי (לא על מילה). פרטים: [[docs/screens/Reading Window]]
+3. **הצצה בעירום:** לחיצה על אזור הטקסט לשנייה וחצי. [[docs/screens/Practice Reading]] · [[docs/screens/Masmich]]
 4. **אנימציה במסמיך:** `Timer` לקצב — לא `Future.delayed` (לא ניתן לשהות)
 5. **תמונות ערכה:** לשמור כנתיב לקובץ בתיקיית האפליקציה (`getApplicationDocumentsDirectory`)
 6. **עלייות:** לפי המיפוי המסורתי (ראשון, שני... שביעי + מפטיר)

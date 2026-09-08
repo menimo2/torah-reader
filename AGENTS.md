@@ -10,7 +10,16 @@ Obsidian vault = **repo root**. Links use `[[wikilinks]]`. Every child note link
 
 1. [`AGENTS.md`](AGENTS.md) — this file (always loaded)
 2. [`index.md`](index.md) — what we are building + the full tree
-3. Then open the **child note** for the screen or feature you touch
+3. Then open the **child note for that exact screen** (see table below). Do not mix rules from another window.
+
+## Which window is the user talking about?
+
+| If they say | Read |
+|---|---|
+| חלון ראשי / הבית / המסך הראשון | [[docs/screens/First Window]] |
+| אימון / אימון קריאה / חלון האימון | [[docs/screens/Practice Reading]] |
+| מסמיך / חלון המסמיך | [[docs/screens/Masmich]] |
+| בחירת קטע / פרשה / עלייה | [[docs/screens/First Window]] + [[docs/features/Parashot and Aliyot]] |
 
 ## Tree (short)
 
@@ -19,8 +28,10 @@ AGENTS.md
 └── index.md
     ├── docs/features/Parashot and Aliyot
     └── docs/screens/Screens Index
-        ├── docs/screens/First Window     ← בחירה בלבד
-        └── docs/screens/Reading Window   ← מלל התורה
+        ├── docs/screens/First Window          ← בחירה בלבד
+        └── docs/screens/Reading Window
+            ├── docs/screens/Practice Reading  ← אימון קריאה
+            └── docs/screens/Masmich           ← מסמיך
 ```
 
 ## Locked decisions (short)

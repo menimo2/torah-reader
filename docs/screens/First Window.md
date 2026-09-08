@@ -5,7 +5,7 @@
 זה **החלון הראשי**. כאן **רק בוחרים**. אין כאן טקסט של התורה.
 
 מיפוי פרשה/עלייה: [[docs/features/Parashot and Aliyot]]
-חלון הקריאה: [[docs/screens/Reading Window]]
+חלון הקריאה — שני חלונות מלל נפרדים: [[docs/screens/Practice Reading]] · [[docs/screens/Masmich]]
 
 ---
 
@@ -41,8 +41,8 @@
 
 ## שני כפתורי המצב
 
-- **אימון קריאה** → חלון קריאה במצב אימון (dropdown עירום / ניקוד / הכל ביחד)
-- **מסמיך** → חלון קריאה במצב מסמיך (עירום + רמז יד; פירוט ב-[[docs/screens/Reading Window]])
+- **אימון קריאה** → [[docs/screens/Practice Reading]]
+- **מסמיך** → [[docs/screens/Masmich]]
 
 ---
 
