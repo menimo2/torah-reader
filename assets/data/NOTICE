@@ -1,0 +1,5 @@
+Open Scriptures Hebrew Bible — see assets/wlc/NOTICE (CC BY 4.0).
+
+Parasha and aliyah verse ranges in parashot.json are derived from
+@hebcal/leyning (https://github.com/hebcal/hebcal-leyning), BSD-2-Clause.
+Haftarah / weekday readings from that package are not used.

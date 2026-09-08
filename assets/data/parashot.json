@@ -1,0 +1,5425 @@
+{
+  "source": "Hebcal leyning fullkriyah (@hebcal/leyning, BSD-2-Clause)",
+  "sourceUrl": "https://github.com/hebcal/hebcal-leyning",
+  "parashot": [
+    {
+      "id": "Bereshit",
+      "hebrewName": "בראשית",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 1,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 3
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 2,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 19
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 2,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 21
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 3,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 18
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 4,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 22
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 4,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 24
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 5,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 8
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 6,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 8
+          }
+        }
+      }
+    },
+    {
+      "id": "Noach",
+      "hebrewName": "נח",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 2,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 6,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 22
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 7,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 16
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 7,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 14
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 8,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 7
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 9,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 17
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 9,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 32
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 11,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 32
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 11,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 32
+          }
+        }
+      }
+    },
+    {
+      "id": "Lech-Lecha",
+      "hebrewName": "לך לך",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 3,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 13
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 12,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 4
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 13,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 18
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 14,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 20
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 14,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 6
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 15,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 6
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 17,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 27
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 17,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 27
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayera",
+      "hebrewName": "וירא",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 4,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 18,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 14
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 18,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 33
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 19,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 20
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 19,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 4
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 21,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 21
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 21,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 34
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 22,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 24
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 22,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 24
+          }
+        }
+      }
+    },
+    {
+      "id": "Chayei Sara",
+      "hebrewName": "חיי שרה",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 5,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 23,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 16
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 23,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 9
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 24,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 26
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 24,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 52
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 24,
+            "verse": 53
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 67
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 25,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 11
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 25,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 18
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 25,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 18
+          }
+        }
+      }
+    },
+    {
+      "id": "Toldot",
+      "hebrewName": "תולדות",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 6,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 25,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 5
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 26,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 12
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 26,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 22
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 26,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 29
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 26,
+            "verse": 30
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 27
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 27,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 4
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 28,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 9
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 28,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 9
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayetzei",
+      "hebrewName": "ויצא",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 7,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 28,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 22
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 29,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 17
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 29,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 13
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 30,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 27
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 30,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 16
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 31,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 42
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 31,
+            "verse": 43
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 3
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 32,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayishlach",
+      "hebrewName": "וישלח",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 8,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 32,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 13
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 32,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 30
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 32,
+            "verse": 31
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 5
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 33,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 20
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 34,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 35,
+            "verse": 11
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 35,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 19
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 36,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 43
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 36,
+            "verse": 40
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 43
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayeshev",
+      "hebrewName": "וישב",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 9,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 37,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 37,
+            "verse": 11
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 37,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 37,
+            "verse": 22
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 37,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 37,
+            "verse": 36
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 38,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 38,
+            "verse": 30
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 39,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 6
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 39,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 23
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 40,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 40,
+            "verse": 23
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 40,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 40,
+            "verse": 23
+          }
+        }
+      }
+    },
+    {
+      "id": "Miketz",
+      "hebrewName": "מקץ",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 10,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 41,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 41,
+            "verse": 14
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 41,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 41,
+            "verse": 38
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 41,
+            "verse": 39
+          },
+          "end": {
+            "chapter": 41,
+            "verse": 52
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 41,
+            "verse": 53
+          },
+          "end": {
+            "chapter": 42,
+            "verse": 18
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 42,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 43,
+            "verse": 15
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 43,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 43,
+            "verse": 29
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 43,
+            "verse": 30
+          },
+          "end": {
+            "chapter": 44,
+            "verse": 17
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 44,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 44,
+            "verse": 17
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayigash",
+      "hebrewName": "ויגש",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 11,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 44,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 44,
+            "verse": 30
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 44,
+            "verse": 31
+          },
+          "end": {
+            "chapter": 45,
+            "verse": 7
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 45,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 45,
+            "verse": 18
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 45,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 45,
+            "verse": 27
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 45,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 46,
+            "verse": 27
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 46,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 47,
+            "verse": 10
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 47,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 47,
+            "verse": 27
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 47,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 47,
+            "verse": 27
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayechi",
+      "hebrewName": "ויחי",
+      "bookOsis": "Gen",
+      "combined": false,
+      "order": 12,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 47,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 48,
+            "verse": 9
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 48,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 48,
+            "verse": 16
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 48,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 48,
+            "verse": 22
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 49,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 49,
+            "verse": 18
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 49,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 49,
+            "verse": 26
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 49,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 50,
+            "verse": 20
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 50,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 50,
+            "verse": 26
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 50,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 50,
+            "verse": 26
+          }
+        }
+      }
+    },
+    {
+      "id": "Shemot",
+      "hebrewName": "שמות",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 13,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 17
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 1,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 10
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 2,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 25
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 3,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 15
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 3,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 17
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 4,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 31
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 5,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 1
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 5,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "Vaera",
+      "hebrewName": "וארא",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 14,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 6,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 13
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 6,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 28
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 6,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 7
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 7,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 6
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 8,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 18
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 8,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 16
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 9,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 35
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 9,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 35
+          }
+        }
+      }
+    },
+    {
+      "id": "Bo",
+      "hebrewName": "בא",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 15,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 10,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 11
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 10,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 23
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 10,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 3
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 11,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 20
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 12,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 28
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 12,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 51
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 13,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 16
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 13,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "Beshalach",
+      "hebrewName": "בשלח",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 16,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 13,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 8
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 14,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 14
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 14,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 25
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 14,
+            "verse": 26
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 26
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 15,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 10
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 16,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 36
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 17,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 16
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 17,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "Yitro",
+      "hebrewName": "יתרו",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 17,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 18,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 12
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 18,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 23
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 18,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 27
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 19,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 6
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 19,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 19
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 19,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 14
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 20,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 23
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 20,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 23
+          }
+        }
+      }
+    },
+    {
+      "id": "Mishpatim",
+      "hebrewName": "משפטים",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 18,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 21,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 19
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 21,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 3
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 22,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 26
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 22,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 5
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 23,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 19
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 23,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 25
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 23,
+            "verse": 26
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 18
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 24,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 18
+          }
+        }
+      }
+    },
+    {
+      "id": "Terumah",
+      "hebrewName": "תרומה",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 19,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 25,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 16
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 25,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 40
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 26,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 14
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 26,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 30
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 26,
+            "verse": 31
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 37
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 27,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 8
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 27,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 19
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 27,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 19
+          }
+        }
+      }
+    },
+    {
+      "id": "Tetzaveh",
+      "hebrewName": "תצוה",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 20,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 27,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 12
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 28,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 30
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 28,
+            "verse": 31
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 43
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 29,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 18
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 29,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 37
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 29,
+            "verse": 38
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 46
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 30,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 10
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 30,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 10
+          }
+        }
+      }
+    },
+    {
+      "id": "Ki Tisa",
+      "hebrewName": "כי תשא",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 21,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 30,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 17
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 31,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 11
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 33,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 16
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 33,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 23
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 34,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 34,
+            "verse": 9
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 34,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 34,
+            "verse": 26
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 34,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 34,
+            "verse": 35
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 34,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 34,
+            "verse": 35
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayakhel",
+      "hebrewName": "ויקהל",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 22,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 35,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 35,
+            "verse": 20
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 35,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 35,
+            "verse": 29
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 35,
+            "verse": 30
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 7
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 36,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 19
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 36,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 37,
+            "verse": 16
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 37,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 37,
+            "verse": 29
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 38,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 38,
+            "verse": 20
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 38,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 38,
+            "verse": 20
+          }
+        }
+      }
+    },
+    {
+      "id": "Pekudei",
+      "hebrewName": "פקודי",
+      "bookOsis": "Exod",
+      "combined": false,
+      "order": 23,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 38,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 1
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 39,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 21
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 39,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 32
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 39,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 43
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 40,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 40,
+            "verse": 16
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 40,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 40,
+            "verse": 27
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 40,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 40,
+            "verse": 38
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 40,
+            "verse": 34
+          },
+          "end": {
+            "chapter": 40,
+            "verse": 38
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayakhel-Pekudei",
+      "hebrewName": "ויקהל-פקודי",
+      "bookOsis": "Exod",
+      "combined": true,
+      "order": 24,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 35,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 35,
+            "verse": 29
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 35,
+            "verse": 30
+          },
+          "end": {
+            "chapter": 37,
+            "verse": 16
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 37,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 37,
+            "verse": 29
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 38,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 1
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 39,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 21
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 39,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 39,
+            "verse": 43
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 40,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 40,
+            "verse": 38
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 40,
+            "verse": 34
+          },
+          "end": {
+            "chapter": 40,
+            "verse": 38
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayikra",
+      "hebrewName": "ויקרא",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 25,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 13
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 1,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 6
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 2,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 16
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 3,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 17
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 4,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 26
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 4,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 10
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 5,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 26
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 5,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 26
+          }
+        }
+      }
+    },
+    {
+      "id": "Tzav",
+      "hebrewName": "צו",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 26,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 6,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 11
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 6,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 10
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 7,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 38
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 8,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 13
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 8,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 21
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 8,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 29
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 8,
+            "verse": 30
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 36
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 8,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 36
+          }
+        }
+      }
+    },
+    {
+      "id": "Shmini",
+      "hebrewName": "שמיני",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 27,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 9,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 16
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 9,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 23
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 9,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 11
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 10,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 15
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 10,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 20
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 11,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 32
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 11,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 47
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 11,
+            "verse": 45
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 47
+          }
+        }
+      }
+    },
+    {
+      "id": "Tazria",
+      "hebrewName": "תזריע",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 28,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 5
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 13,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 17
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 13,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 23
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 13,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 28
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 13,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 39
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 13,
+            "verse": 40
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 54
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 13,
+            "verse": 55
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 59
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 13,
+            "verse": 57
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 59
+          }
+        }
+      }
+    },
+    {
+      "id": "Metzora",
+      "hebrewName": "מצורע",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 29,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 14,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 12
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 14,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 20
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 14,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 32
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 14,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 53
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 14,
+            "verse": 54
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 15
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 15,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 28
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 15,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 33
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 15,
+            "verse": 31
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 33
+          }
+        }
+      }
+    },
+    {
+      "id": "Tazria-Metzora",
+      "hebrewName": "תזריע-מצורע",
+      "bookOsis": "Lev",
+      "combined": true,
+      "order": 30,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 12,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 23
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 13,
+            "verse": 24
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 39
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 13,
+            "verse": 40
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 54
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 13,
+            "verse": 55
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 20
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 14,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 32
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 14,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 15
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 15,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 33
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 15,
+            "verse": 31
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 33
+          }
+        }
+      }
+    },
+    {
+      "id": "Achrei Mot",
+      "hebrewName": "אחרי מות",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 31,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 16,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 17
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 16,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 24
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 16,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 34
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 17,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 7
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 17,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 5
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 18,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 21
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 18,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 30
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 18,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 30
+          }
+        }
+      }
+    },
+    {
+      "id": "Kedoshim",
+      "hebrewName": "קדושים",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 32,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 19,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 14
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 19,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 22
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 19,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 32
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 19,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 37
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 20,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 7
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 20,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 22
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 20,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 27
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 20,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 27
+          }
+        }
+      }
+    },
+    {
+      "id": "Achrei Mot-Kedoshim",
+      "hebrewName": "אחרי מות-קדושים",
+      "bookOsis": "Lev",
+      "combined": true,
+      "order": 33,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 16,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 24
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 16,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 7
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 17,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 21
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 18,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 14
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 19,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 32
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 19,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 7
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 20,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 27
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 20,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 27
+          }
+        }
+      }
+    },
+    {
+      "id": "Emor",
+      "hebrewName": "אמור",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 34,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 21,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 15
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 21,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 16
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 22,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 33
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 23,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 22
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 23,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 32
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 23,
+            "verse": 33
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 44
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 24,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 23
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 24,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 23
+          }
+        }
+      }
+    },
+    {
+      "id": "Behar",
+      "hebrewName": "בהר",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 35,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 25,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 13
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 25,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 18
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 25,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 24
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 25,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 28
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 25,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 38
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 25,
+            "verse": 39
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 46
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 25,
+            "verse": 47
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 2
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 25,
+            "verse": 55
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 2
+          }
+        }
+      }
+    },
+    {
+      "id": "Bechukotai",
+      "hebrewName": "בחוקתי",
+      "bookOsis": "Lev",
+      "combined": false,
+      "order": 36,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 26,
+            "verse": 3
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 5
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 26,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 9
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 26,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 46
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 27,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 15
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 27,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 21
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 27,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 28
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 27,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 34
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 27,
+            "verse": 32
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 34
+          }
+        }
+      }
+    },
+    {
+      "id": "Behar-Bechukotai",
+      "hebrewName": "בהר-בחוקתי",
+      "bookOsis": "Lev",
+      "combined": true,
+      "order": 37,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 25,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 18
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 25,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 28
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 25,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 38
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 25,
+            "verse": 39
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 9
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 26,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 46
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 27,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 15
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 27,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 34
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 27,
+            "verse": 32
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 34
+          }
+        }
+      }
+    },
+    {
+      "id": "Bamidbar",
+      "hebrewName": "במדבר",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 38,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 19
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 1,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 54
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 2,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 34
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 3,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 13
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 3,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 39
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 3,
+            "verse": 40
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 51
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 4,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 20
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 4,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 20
+          }
+        }
+      }
+    },
+    {
+      "id": "Nasso",
+      "hebrewName": "נשא",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 39,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 4,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 37
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 4,
+            "verse": 38
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 49
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 5,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 10
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 5,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 27
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 7,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 41
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 7,
+            "verse": 42
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 71
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 7,
+            "verse": 72
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 89
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 7,
+            "verse": 87
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 89
+          }
+        }
+      }
+    },
+    {
+      "id": "Beha'alotcha",
+      "hebrewName": "בהעלותך",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 40,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 8,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 14
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 8,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 26
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 9,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 14
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 9,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 10
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 10,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 34
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 10,
+            "verse": 35
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 29
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 11,
+            "verse": 30
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 16
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 12,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "Sh'lach",
+      "hebrewName": "שלח",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 41,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 13,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 20
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 13,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 7
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 14,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 25
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 14,
+            "verse": 26
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 7
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 15,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 16
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 15,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 26
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 15,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 41
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 15,
+            "verse": 37
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 41
+          }
+        }
+      }
+    },
+    {
+      "id": "Korach",
+      "hebrewName": "קרח",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 42,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 16,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 13
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 16,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 19
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 16,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 8
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 17,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 15
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 17,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 24
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 17,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 20
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 18,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 32
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 18,
+            "verse": 30
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 32
+          }
+        }
+      }
+    },
+    {
+      "id": "Chukat",
+      "hebrewName": "חוקת",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 43,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 19,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 17
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 19,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 6
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 20,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 13
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 20,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 21
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 20,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 9
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 21,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 20
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 21,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 1
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 21,
+            "verse": 34
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "Balak",
+      "hebrewName": "בלק",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 44,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 22,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 12
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 22,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 20
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 22,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 38
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 22,
+            "verse": 39
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 12
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 23,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 26
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 23,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 13
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 24,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 9
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 25,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 9
+          }
+        }
+      }
+    },
+    {
+      "id": "Chukat-Balak",
+      "hebrewName": "חוקת-בלק",
+      "bookOsis": "Num",
+      "combined": true,
+      "order": 45,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 19,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 6
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 20,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 21
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 20,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 20
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 21,
+            "verse": 21
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 12
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 22,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 38
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 22,
+            "verse": 39
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 26
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 23,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 9
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 25,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 9
+          }
+        }
+      }
+    },
+    {
+      "id": "Pinchas",
+      "hebrewName": "פינחס",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 46,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 25,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 4
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 26,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 51
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 26,
+            "verse": 52
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 5
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 27,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 23
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 28,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 15
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 28,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 11
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 29,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 1
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 29,
+            "verse": 35
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "Matot",
+      "hebrewName": "מטות",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 47,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 30,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 17
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 31,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 12
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 31,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 24
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 31,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 41
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 31,
+            "verse": 42
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 54
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 32,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 19
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 32,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 42
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 32,
+            "verse": 39
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 42
+          }
+        }
+      }
+    },
+    {
+      "id": "Masei",
+      "hebrewName": "מסעי",
+      "bookOsis": "Num",
+      "combined": false,
+      "order": 48,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 33,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 10
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 33,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 49
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 33,
+            "verse": 50
+          },
+          "end": {
+            "chapter": 34,
+            "verse": 15
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 34,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 34,
+            "verse": 29
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 35,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 35,
+            "verse": 8
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 35,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 35,
+            "verse": 34
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 36,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 13
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 36,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 13
+          }
+        }
+      }
+    },
+    {
+      "id": "Matot-Masei",
+      "hebrewName": "מטות-מסעי",
+      "bookOsis": "Num",
+      "combined": true,
+      "order": 49,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 30,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 12
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 31,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 54
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 32,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 19
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 32,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 49
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 33,
+            "verse": 50
+          },
+          "end": {
+            "chapter": 34,
+            "verse": 15
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 34,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 35,
+            "verse": 8
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 35,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 13
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 36,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 36,
+            "verse": 13
+          }
+        }
+      }
+    },
+    {
+      "id": "Devarim",
+      "hebrewName": "דברים",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 50,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 1,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 10
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 1,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 21
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 1,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 1,
+            "verse": 38
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 1,
+            "verse": 39
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 1
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 2,
+            "verse": 2
+          },
+          "end": {
+            "chapter": 2,
+            "verse": 30
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 2,
+            "verse": 31
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 14
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 3,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 22
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 3,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 3,
+            "verse": 22
+          }
+        }
+      }
+    },
+    {
+      "id": "Vaetchanan",
+      "hebrewName": "ואתחנן",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 51,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 3,
+            "verse": 23
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 4
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 4,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 40
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 4,
+            "verse": 41
+          },
+          "end": {
+            "chapter": 4,
+            "verse": 49
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 5,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 5,
+            "verse": 18
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 5,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 3
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 6,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 6,
+            "verse": 25
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 7,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 11
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 7,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 7,
+            "verse": 11
+          }
+        }
+      }
+    },
+    {
+      "id": "Eikev",
+      "hebrewName": "עקב",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 52,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 7,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 8,
+            "verse": 10
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 8,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 3
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 9,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 9,
+            "verse": 29
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 10,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 10,
+            "verse": 11
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 10,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 9
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 11,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 21
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 11,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 25
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 11,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 11,
+            "verse": 25
+          }
+        }
+      }
+    },
+    {
+      "id": "Re'eh",
+      "hebrewName": "ראה",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 53,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 11,
+            "verse": 26
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 10
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 12,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 12,
+            "verse": 28
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 12,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 13,
+            "verse": 19
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 14,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 21
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 14,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 14,
+            "verse": 29
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 15,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 15,
+            "verse": 18
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 15,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 17
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 16,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 16,
+            "verse": 17
+          }
+        }
+      }
+    },
+    {
+      "id": "Shoftim",
+      "hebrewName": "שופטים",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 54,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 16,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 13
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 17,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 17,
+            "verse": 20
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 18,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 5
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 18,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 18,
+            "verse": 13
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 18,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 19,
+            "verse": 13
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 19,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 20,
+            "verse": 9
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 20,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 9
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 21,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 9
+          }
+        }
+      }
+    },
+    {
+      "id": "Ki Teitzei",
+      "hebrewName": "כי תצא",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 55,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 21,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 21,
+            "verse": 21
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 21,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 22,
+            "verse": 7
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 22,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 7
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 23,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 23,
+            "verse": 24
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 23,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 4
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 24,
+            "verse": 5
+          },
+          "end": {
+            "chapter": 24,
+            "verse": 13
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 24,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 19
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 25,
+            "verse": 17
+          },
+          "end": {
+            "chapter": 25,
+            "verse": 19
+          }
+        }
+      }
+    },
+    {
+      "id": "Ki Tavo",
+      "hebrewName": "כי תבוא",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 56,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 26,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 11
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 26,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 15
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 26,
+            "verse": 16
+          },
+          "end": {
+            "chapter": 26,
+            "verse": 19
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 27,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 27,
+            "verse": 10
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 27,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 6
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 28,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 28,
+            "verse": 69
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 29,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 8
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 29,
+            "verse": 6
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 8
+          }
+        }
+      }
+    },
+    {
+      "id": "Nitzavim",
+      "hebrewName": "ניצבים",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 57,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 29,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 11
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 29,
+            "verse": 12
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 14
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 29,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 28
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 30,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 6
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 30,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 10
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 30,
+            "verse": 11
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 14
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 30,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 20
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 30,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 20
+          }
+        }
+      }
+    },
+    {
+      "id": "Vayeilech",
+      "hebrewName": "וילך",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 58,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 31,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 3
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 31,
+            "verse": 4
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 6
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 31,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 9
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 31,
+            "verse": 10
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 13
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 31,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 19
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 31,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 24
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 31,
+            "verse": 25
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 30
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 31,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 30
+          }
+        }
+      }
+    },
+    {
+      "id": "Nitzavim-Vayeilech",
+      "hebrewName": "ניצבים-וילך",
+      "bookOsis": "Deut",
+      "combined": true,
+      "order": 59,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 29,
+            "verse": 9
+          },
+          "end": {
+            "chapter": 29,
+            "verse": 28
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 30,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 6
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 30,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 30,
+            "verse": 14
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 30,
+            "verse": 15
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 6
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 31,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 13
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 31,
+            "verse": 14
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 19
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 31,
+            "verse": 20
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 30
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 31,
+            "verse": 28
+          },
+          "end": {
+            "chapter": 31,
+            "verse": 30
+          }
+        }
+      }
+    },
+    {
+      "id": "Ha'azinu",
+      "hebrewName": "האזינו",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 60,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 32,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 6
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 32,
+            "verse": 7
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 12
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 32,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 18
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 32,
+            "verse": 19
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 28
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 32,
+            "verse": 29
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 39
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 32,
+            "verse": 40
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 43
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 32,
+            "verse": 44
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 52
+          }
+        },
+        "M": {
+          "start": {
+            "chapter": 32,
+            "verse": 48
+          },
+          "end": {
+            "chapter": 32,
+            "verse": 52
+          }
+        }
+      }
+    },
+    {
+      "id": "Vezot Haberakhah",
+      "hebrewName": "וזאת הברכה",
+      "bookOsis": "Deut",
+      "combined": false,
+      "order": 61,
+      "aliyot": {
+        "1": {
+          "start": {
+            "chapter": 33,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 7
+          }
+        },
+        "2": {
+          "start": {
+            "chapter": 33,
+            "verse": 8
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 12
+          }
+        },
+        "3": {
+          "start": {
+            "chapter": 33,
+            "verse": 13
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 17
+          }
+        },
+        "4": {
+          "start": {
+            "chapter": 33,
+            "verse": 18
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 21
+          }
+        },
+        "5": {
+          "start": {
+            "chapter": 33,
+            "verse": 22
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 26
+          }
+        },
+        "6": {
+          "start": {
+            "chapter": 33,
+            "verse": 27
+          },
+          "end": {
+            "chapter": 33,
+            "verse": 29
+          }
+        },
+        "7": {
+          "start": {
+            "chapter": 34,
+            "verse": 1
+          },
+          "end": {
+            "chapter": 34,
+            "verse": 12
+          }
+        }
+      }
+    }
+  ]
+}
