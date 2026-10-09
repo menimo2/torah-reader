@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:torah_reader/core/hebrew_text.dart';
+import 'package:torah_reader/data/models/torah_word.dart';
 import 'package:torah_reader/data/xml/morphhb_parser.dart';
 
 const _gen1 = '''
@@ -22,6 +23,11 @@ const _gen1 = '''
         <verse osisID="Gen.1.2">
           <w>עַל</w><seg type="x-maqqef">־</seg><w>פְּנֵ֣י</w>
         </verse>
+        <verse osisID="Gen.1.5">
+          <w>אֱלֹהִ֤ים</w>
+          <seg type="x-paseq">׀</seg>
+          <w>לָאוֹר֙</w>
+        </verse>
       </chapter>
     </div>
   </osisText>
@@ -33,7 +39,7 @@ void main() {
 
   test('parses Gen 1:1 words without slashes', () {
     final verses = parser.parse(_gen1, bookOsis: 'Gen');
-    expect(verses, hasLength(2));
+    expect(verses, hasLength(3));
     final v1 = verses.first;
     expect(v1.osisId, 'Gen.1.1');
     expect(v1.words, hasLength(7));
@@ -41,6 +47,9 @@ void main() {
     expect(v1.words.first.fullText.contains('/'), isFalse);
     expect(v1.words.first.bare, 'בראשית');
     expect(v1.words.last.taamName, 'סוף פסוק');
+    expect(v1.words.last.fullText.endsWith('\u05C3'), isTrue);
+    expect(v1.words.last.bare, 'הארץ');
+    expect(v1.words.last.nikudOnly.contains('\u05C3'), isFalse);
   });
 
   test('attaches maqqef to the previous word', () {
@@ -51,6 +60,24 @@ void main() {
     expect(HebrewText.bare(v2.words.first.fullText), 'על');
   });
 
+  test('attaches paseq to the previous word', () {
+    final verses = parser.parse(_gen1, bookOsis: 'Gen');
+    final v = verses[2];
+    expect(v.words.first.taamName, 'פסק');
+    expect(v.words.first.fullText.contains('\u05C0'), isTrue);
+    expect(v.words.first.bare, 'אלהים');
+  });
+
+  test('Gen 1:7 אלהים is zarqa, not an unknown mark', () {
+    final xml = File('assets/wlc/Gen.xml').readAsStringSync();
+    final verses = parser.parse(xml, bookOsis: 'Gen');
+    final v7 = verses.firstWhere((v) => v.osisId == 'Gen.1.7');
+    final elohim = v7.words.firstWhere((w) => w.bare == 'אלהים');
+    expect(elohim.taamName, 'זרקא');
+    expect(elohim.fullText.contains('\u05AE'), isTrue);
+    expect(elohim.display(TextVersion.full).contains('\u05AE'), isTrue);
+  });
+
   test('parses bundled Genesis XML', () {
     final xml = File('assets/wlc/Gen.xml').readAsStringSync();
     final verses = parser.parse(xml, bookOsis: 'Gen');
@@ -58,5 +85,6 @@ void main() {
     expect(verses.first.osisId, 'Gen.1.1');
     expect(verses.first.words.first.bare, 'בראשית');
     expect(verses.first.words.last.taamName, 'סוף פסוק');
+    expect(verses.first.words.last.fullText.endsWith('\u05C3'), isTrue);
   });
 }

@@ -6,6 +6,7 @@ import '../../core/reading_mode.dart';
 import '../../data/providers.dart';
 import '../reading/passage_picker.dart';
 import '../reading/reading_screen.dart';
+import '../settings/settings_screen.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -28,8 +29,10 @@ class HomeScreen extends ConsumerWidget {
           IconButton(
             tooltip: 'הגדרות',
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('ההגדרות עדיין לא מוכנות')),
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const SettingsScreen(),
+                ),
               );
             },
             icon: const Icon(Icons.settings_outlined),

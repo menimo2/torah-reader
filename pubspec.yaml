@@ -16,6 +16,8 @@ dependencies:
   path: ^1.9.1
   path_provider: ^2.1.5
   shared_preferences: ^2.5.3
+  file_picker: ^8.3.7
+  web: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -27,10 +29,23 @@ flutter:
   assets:
     - assets/wlc/
     - assets/fonts/EzraSIL-OFL.txt
+    - assets/fonts/SBLHebrew-OFL.txt
     - assets/data/parashot.json
     - assets/data/NOTICE
-    - assets/signs/jerusalem/
+    - assets/signs/jerusalem/default.png
+    - assets/signs/jerusalem/etnachta.png
+    - assets/signs/jerusalem/zaqef_gadol.png
+    - assets/signs/jerusalem/revia.png
+    - assets/signs/jerusalem/zarqa.gif
+    - assets/signs/jerusalem/geresh.gif
+    - assets/signs/jerusalem/azla.gif
+    - assets/signs/jerusalem/segolta.png
+    - assets/signs/jerusalem/tevir.gif
+    - assets/signs/jerusalem/gershayim.png
   fonts:
+    - family: SBLHebrew
+      fonts:
+        - asset: assets/fonts/SBL_Hbrw.ttf
     - family: EzraSIL
       fonts:
         - asset: assets/fonts/SILEOT.ttf

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../core/hand_signs.dart';
-import '../../core/hebrew_numerals.dart';
 import '../../core/parashot.dart';
 import '../../core/reading_mode.dart';
-import '../../data/models/torah_verse.dart';
 import '../../data/models/torah_word.dart';
 import '../../data/providers.dart';
 import 'hold_to_peek.dart';
+import 'masmich_session.dart';
+import 'torah_chapter_view.dart';
+
+export 'torah_chapter_view.dart';
 
 class ReadingScreen extends ConsumerWidget {
   const ReadingScreen({super.key, required this.mode});
@@ -30,48 +31,71 @@ class ReadingScreen extends ConsumerWidget {
               .hebrewName,
       orElse: () => selection.parashaId,
     );
+    final title = '$parashaName · ${selection.aliyahLabel}';
+
+    if (!isPractice) {
+      return verses.when(
+        loading: () => Scaffold(
+          appBar: AppBar(title: Text(title)),
+          body: const Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(height: 12),
+                Text('טוען את הקטע…'),
+              ],
+            ),
+          ),
+        ),
+        error: (error, _) => Scaffold(
+          appBar: AppBar(title: Text(title)),
+          body: Center(child: Text('שגיאה: $error')),
+        ),
+        data: (data) => MasmichScreen(title: title, verses: data),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('$parashaName · ${selection.aliyahLabel}'),
+        title: Text(title),
       ),
       body: Column(
         children: [
-          if (isPractice)
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-              child: InputDecorator(
-                decoration: const InputDecoration(
-                  labelText: 'תצוגה',
-                  border: OutlineInputBorder(),
-                ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<TextVersion>(
-                    isExpanded: true,
-                    value: version,
-                    items: const [
-                      DropdownMenuItem(
-                        value: TextVersion.bare,
-                        child: Text('עירום'),
-                      ),
-                      DropdownMenuItem(
-                        value: TextVersion.nikud,
-                        child: Text('עם ניקוד'),
-                      ),
-                      DropdownMenuItem(
-                        value: TextVersion.full,
-                        child: Text('הכל ביחד'),
-                      ),
-                    ],
-                    onChanged: (next) {
-                      if (next != null) {
-                        ref.read(textVersionProvider.notifier).setVersion(next);
-                      }
-                    },
-                  ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+            child: InputDecorator(
+              decoration: const InputDecoration(
+                labelText: 'תצוגה',
+                border: OutlineInputBorder(),
+              ),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<TextVersion>(
+                  isExpanded: true,
+                  value: version,
+                  items: const [
+                    DropdownMenuItem(
+                      value: TextVersion.bare,
+                      child: Text('עירום'),
+                    ),
+                    DropdownMenuItem(
+                      value: TextVersion.nikud,
+                      child: Text('עם ניקוד'),
+                    ),
+                    DropdownMenuItem(
+                      value: TextVersion.full,
+                      child: Text('הכל ביחד'),
+                    ),
+                  ],
+                  onChanged: (next) {
+                    if (next != null) {
+                      ref.read(textVersionProvider.notifier).setVersion(next);
+                    }
+                  },
                 ),
               ),
             ),
+          ),
           Expanded(
             child: verses.when(
               loading: () => const Center(
@@ -91,108 +115,15 @@ class ReadingScreen extends ConsumerWidget {
                   return TorahChapterView(
                     verses: data,
                     version: shown,
-                    hebrewRefs: isPractice,
+                    showVerseRefs: true,
+                    separateVerses: true,
                   );
                 },
               ),
             ),
           ),
-          if (!isPractice) const MasmichHandPanel(),
         ],
       ),
-    );
-  }
-}
-
-class MasmichHandPanel extends StatelessWidget {
-  const MasmichHandPanel({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      elevation: 6,
-      color: Theme.of(context).colorScheme.surface,
-      child: SafeArea(
-        top: false,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                'סימן יד · ${JerusalemHandSigns.packName}',
-                style: Theme.of(context).textTheme.labelLarge,
-              ),
-              const SizedBox(height: 8),
-              Image.asset(
-                JerusalemHandSigns.defaultAsset,
-                height: 120,
-                fit: BoxFit.contain,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TorahChapterView extends StatelessWidget {
-  const TorahChapterView({
-    super.key,
-    required this.verses,
-    required this.version,
-    this.hebrewRefs = false,
-  });
-
-  final List<TorahVerse> verses;
-  final TextVersion version;
-  final bool hebrewRefs;
-
-  @override
-  Widget build(BuildContext context) {
-    if (verses.isEmpty) {
-      return const Center(child: Text('אין פסוקים בקטע זה'));
-    }
-
-    const textStyle = TextStyle(
-      fontFamily: 'EzraSIL',
-      fontSize: 26,
-      height: 1.8,
-    );
-
-    return ListView.builder(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
-      itemCount: verses.length,
-      itemBuilder: (context, index) {
-        final verse = verses[index];
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 16),
-          child: Text.rich(
-            TextSpan(
-              children: [
-                TextSpan(
-                  text: hebrewRefs
-                      ? '${hebrewChapterVerse(verse.chapter, verse.verse)}  '
-                      : '${verse.chapter}:${verse.verse}  ',
-                  style: textStyle.copyWith(
-                    fontSize: 15,
-                    color: Theme.of(context).colorScheme.primary,
-                    fontFamily: 'EzraSIL',
-                  ),
-                ),
-                for (var i = 0; i < verse.words.length; i++)
-                  TextSpan(
-                    text: '${verse.words[i].display(version)}'
-                        '${i == verse.words.length - 1 ? '' : ' '}',
-                  ),
-              ],
-            ),
-            textDirection: TextDirection.rtl,
-            style: textStyle,
-          ),
-        );
-      },
     );
   }
 }

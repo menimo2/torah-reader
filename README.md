@@ -15,4 +15,4 @@ flutter run -d windows
 ## מקורות
 
 - טקסט: [Open Scriptures Hebrew Bible](https://github.com/openscriptures/morphhb) (CC BY 4.0)
-- גופן: Ezra SIL (`assets/fonts/SILEOT.ttf`, OFL)
+- גופן: [SBL Hebrew](https://www.sbl-site.org/educational/BiblicalFonts_SBLHebrew.aspx) (`assets/fonts/SBL_Hbrw.ttf`, OFL). Ezra SIL נשאר בריפו אבל לא פעיל.

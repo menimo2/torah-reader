@@ -5,7 +5,7 @@ import 'package:sqflite/sqflite.dart';
 
 import 'db_factory.dart';
 
-const wlcImportVersion = '1';
+const wlcImportVersion = '3';
 
 class AppDatabase {
   AppDatabase._();

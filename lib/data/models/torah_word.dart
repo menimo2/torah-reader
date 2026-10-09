@@ -22,7 +22,7 @@ class TorahWord {
   String display(TextVersion version) {
     switch (version) {
       case TextVersion.full:
-        return fullText;
+        return HebrewText.displayFull(fullText);
       case TextVersion.nikud:
         return nikudOnly;
       case TextVersion.bare:
@@ -44,10 +44,22 @@ class TorahWord {
     required String fullText,
     required int wordIndex,
     bool endsVerse = false,
+    bool hasPaseq = false,
   }) {
-    final taam = Taamim.primaryOf(fullText, endsVerse: endsVerse);
+    var stored = fullText;
+    if (hasPaseq && !stored.contains('\u05C0')) {
+      stored = '$stored\u05C0';
+    }
+    if (endsVerse && !stored.endsWith('\u05C3')) {
+      stored = '$stored\u05C3';
+    }
+    final taam = Taamim.primaryOf(
+      stored,
+      endsVerse: endsVerse,
+      hasPaseq: hasPaseq,
+    );
     return TorahWord(
-      fullText: fullText,
+      fullText: stored,
       wordIndex: wordIndex,
       taamName: taam?.name,
       hasTaam: taam != null,

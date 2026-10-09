@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/app_font.dart';
 import 'data/providers.dart';
 import 'features/home/home_screen.dart';
 
@@ -37,7 +38,7 @@ class TorahReaderApp extends ConsumerWidget {
           seedColor: const Color(0xFF5C3A1E),
           brightness: Brightness.light,
         ),
-        fontFamily: 'EzraSIL',
+        fontFamily: AppFont.family,
         useMaterial3: true,
       ),
       home: const _BootstrapGate(),

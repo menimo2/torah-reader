@@ -33,5 +33,12 @@ void main() {
     expect(Taamim.primaryOf(bara)?.name, 'מונח');
     expect(Taamim.primaryOf(elohim)?.name, 'אתנחתא');
     expect(Taamim.primaryOf('הָאָֽרֶץ', endsVerse: true)?.name, 'סוף פסוק');
+    expect(Taamim.primaryOf('אֱלֹהִ֤ים', hasPaseq: true)?.name, 'פסק');
+  });
+
+  test('WLC zinor is zarqa in the 21 books', () {
+    const elohimZinor = 'אֱלֹהִים\u05AE';
+    expect(Taamim.primaryOf(elohimZinor)?.name, 'זרקא');
+    expect(HebrewText.displayFull(elohimZinor), elohimZinor);
   });
 }

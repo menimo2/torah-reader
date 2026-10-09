@@ -5,6 +5,7 @@ import 'package:torah_reader/core/taamim.dart';
 void main() {
   test('every parsed taam has a Jerusalem sign', () {
     expect(JerusalemHandSigns.of(Taamim.sofPasuqName), isNotNull);
+    expect(JerusalemHandSigns.of(Taamim.paseqName), isNotNull);
     for (final info in Taamim.byCode.values) {
       expect(
         JerusalemHandSigns.of(info.name),
@@ -14,10 +15,39 @@ void main() {
     }
   });
 
-  test('placeholder asset is shared until GIFs exist', () {
+  test('each taam has all three appearances and a color duration', () {
     for (final sign in JerusalemHandSigns.all) {
-      expect(sign.asset, JerusalemHandSigns.defaultAsset);
+      expect(sign.alephMark, isNotEmpty);
+      expect(sign.sephardiName, isNotEmpty);
+      expect(
+        sign.imageAsset,
+        switch (sign.id) {
+          'etnachta' => 'assets/signs/jerusalem/etnachta.png',
+          'zaqef_gadol' => 'assets/signs/jerusalem/zaqef_gadol.png',
+          'revia' => 'assets/signs/jerusalem/revia.png',
+          'zarqa' => 'assets/signs/jerusalem/zarqa.gif',
+          'geresh' => 'assets/signs/jerusalem/geresh.gif',
+          'geresh_muqdam' => 'assets/signs/jerusalem/geresh.gif',
+          'azla' => 'assets/signs/jerusalem/azla.gif',
+          'segolta' => 'assets/signs/jerusalem/segolta.png',
+          'tevir' => 'assets/signs/jerusalem/tevir.gif',
+          'gershayim' => 'assets/signs/jerusalem/gershayim.png',
+          _ => JerusalemHandSigns.defaultAsset,
+        },
+      );
+      expect(sign.colorMs, greaterThan(0));
+      expect(sign.appearance(SignPack.alephTaam), sign.alephMark);
+      expect(sign.appearance(SignPack.name), sign.sephardiName);
+      expect(sign.appearance(SignPack.image), sign.imageAsset);
     }
+  });
+
+  test('starter signs color for 1100ms', () {
+    for (final sign in JerusalemHandSigns.starterSet) {
+      expect(sign.colorMs, 1100, reason: sign.id);
+    }
+    expect(JerusalemHandSigns.of('מונח')?.colorMs, 580);
+    expect(JerusalemHandSigns.of('טפחא')?.colorMs, 680);
   });
 
   test('Sephardi display names for the common ones', () {
@@ -25,5 +55,48 @@ void main() {
     expect(JerusalemHandSigns.of('מונח')?.sephardiName, 'שופר הולך');
     expect(JerusalemHandSigns.of('אתנחתא')?.sephardiName, 'אתנח');
     expect(JerusalemHandSigns.of('קדמא')?.sephardiName, 'אזלא');
+    expect(JerusalemHandSigns.of('סוף פסוק')?.alephMark, 'א׃');
+  });
+
+  test('starter set is the user list of signs to show', () {
+    const on = {
+      'sof_pasuq',
+      'paseq',
+      'etnachta',
+      'segolta',
+      'zaqef_qatan',
+      'zaqef_gadol',
+      'revia',
+      'zarqa',
+      'tevir',
+      'geresh',
+      'geresh_muqdam',
+      'gershayim',
+      'qarnei_parah',
+      'telisha_gedola',
+      'pazer',
+      'darga',
+      'azla',
+      'telisha_qetana',
+    };
+    expect(
+      JerusalemHandSigns.starterSet.map((s) => s.id).toSet(),
+      on,
+    );
+    expect(JerusalemHandSigns.shownOf('אתנחתא'), isNotNull);
+    expect(JerusalemHandSigns.shownOf('גרשים'), isNotNull);
+    expect(JerusalemHandSigns.shownOf('פסק'), isNotNull);
+    expect(JerusalemHandSigns.shownOf('קדמא'), isNotNull);
+    expect(JerusalemHandSigns.shownOf('טפחא'), isNull);
+    expect(JerusalemHandSigns.shownOf('פשטא'), isNull);
+    expect(JerusalemHandSigns.shownOf('מונח'), isNull);
+    expect(
+      JerusalemHandSigns.shownOf('מונח', enabledIds: {'munach'}),
+      isNotNull,
+    );
+    expect(
+      JerusalemHandSigns.shownOf('אתנחתא', enabledIds: {}),
+      isNull,
+    );
   });
 }

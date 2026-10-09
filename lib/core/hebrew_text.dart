@@ -12,6 +12,7 @@ class HebrewText {
   static const int _paseq = 0x05C0;
   static const int _slash = 0x002F;
   static const int _hyphen = 0x002D;
+  static const int _narrowNbsp = 0x202F;
 
   static bool isTaam(int code) =>
       code >= _taamimStart && code <= _taamimEnd;
@@ -33,11 +34,18 @@ class HebrewText {
   static String stripSlash(String text) =>
       String.fromCharCodes(text.runes.where((c) => c != _slash));
 
+  /// Full pointed text. WLC zinor (U+05AE) stays as-is; SBL Hebrew places it.
+  static String displayFull(String fullText) => fullText;
+
   /// Nikud without taamim. Maqaf becomes a plain hyphen.
   static String nikudOnly(String fullText) {
     final out = <int>[];
     for (final c in fullText.runes) {
-      if (isTaam(c) || isSofPasuq(c) || c == _paseq || c == _slash) {
+      if (isTaam(c) ||
+          isSofPasuq(c) ||
+          c == _paseq ||
+          c == _slash ||
+          c == _narrowNbsp) {
         continue;
       }
       if (isMaqaf(c)) {
@@ -59,7 +67,8 @@ class HebrewText {
           isMaqaf(c) ||
           c == _paseq ||
           c == _slash ||
-          c == _hyphen) {
+          c == _hyphen ||
+          c == _narrowNbsp) {
         continue;
       }
       out.add(c);

@@ -54,6 +54,10 @@ class MorphhbParser {
             if (built.isNotEmpty) {
               built.last.endsVerse = true;
             }
+          } else if (type == 'x-paseq') {
+            if (built.isNotEmpty) {
+              built.last.hasPaseq = true;
+            }
           } else if (type == 'x-maqqef') {
             if (built.isNotEmpty) {
               built.last.text = '${built.last.text}\u05BE';
@@ -70,6 +74,7 @@ class MorphhbParser {
           fullText: built[i].text,
           wordIndex: i,
           endsVerse: built[i].endsVerse,
+          hasPaseq: built[i].hasPaseq,
         ),
     ];
   }
@@ -88,6 +93,7 @@ class _WordDraft {
   _WordDraft(this.text);
   String text;
   bool endsVerse = false;
+  bool hasPaseq = false;
 }
 
 class _OsisRef {

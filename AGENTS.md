@@ -32,7 +32,7 @@ AGENTS.md
     ├── docs/features/Jerusalem Hand Signs     ← מסמיך, ירושלמי
     └── docs/screens/Screens Index
         ├── docs/screens/First Window          ← בחירה בלבד
-        │   └── docs/screens/Settings          ← הגדרות (עדיין לא בקוד)
+        │   └── docs/screens/Settings          ← הגדרות
         └── docs/screens/Reading Window
             ├── docs/screens/Practice Reading  ← אימון קריאה
             └── docs/screens/Masmich           ← מסמיך
@@ -43,7 +43,7 @@ AGENTS.md
 | Topic | Decision |
 |---|---|
 | App | Flutter — Android + iOS from day one |
-| Font | Embedded asset (Ezra SIL), never loaded from the network |
+| Font | Embedded **SBL Hebrew** (OpenType). Ezra SIL stays in the repo but is not the active face — Flutter has no Graphite, so Ezra mis-places taamim. Never load fonts from the network |
 | Text | Open Scriptures Hebrew Bible (WLC), stored once (full), versions derived at runtime |
 | State | Riverpod |
 | Storage | SQLite (`sqflite`) for parsed text + sign sets; SharedPreferences for light settings |
@@ -51,5 +51,7 @@ AGENTS.md
 | Scope | 21 books only (not איוב, משלי, תהלים) |
 | Direction | RTL everywhere (`Directionality.rtl`) |
 | First window | Passage picker (sefer / parasha / aliyah, remembered) + practice vs מסמיך. [[docs/screens/First Window]] |
-| Settings | Masmich sign pack (א+taam / name / photos), preview full set, upload, remembered until changed. Not built yet. [[docs/screens/Settings]] |
-| Masmich signs | Sephardi names, Jerusalem right hand. Three packs; default pack 3 uses placeholder hand until GIFs. [[docs/features/Jerusalem Hand Signs]] |
+| Settings | Masmich sign pack (א+taam / name / photos), which taamim to show, preview full set, upload, remembered until changed or restored. [[docs/screens/Settings]] |
+| Masmich signs | Sephardi names, Jerusalem right hand. Three packs; masmich uses Settings pack (default photos/GIF). Hands: light peach skin (not yellow emoji), cream `#FAF7F0` canvas. First-run shows starter taamim only. [[docs/features/Jerusalem Hand Signs]] |
+| Masmich text | Always bare, no chapter/verse labels, no verse breaks (would reveal sof pasuk). [[docs/screens/Masmich]] |
+| Word coloring | Same `colorMs` Timer engine may drive both practice and masmich. Sign-of-next-word is masmich-only. [[docs/screens/Reading Window]] |

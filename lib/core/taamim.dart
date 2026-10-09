@@ -21,12 +21,21 @@ class Taamim {
   Taamim._();
 
   static const String sofPasuqName = 'סוף פסוק';
+  static const String paseqName = 'פסק';
 
   static const TaamInfo sofPasuq = TaamInfo(
     name: sofPasuqName,
     disjunctive: true,
     timeBonus: 0.80,
     priority: 100,
+  );
+
+  /// Vertical bar after a word (WLC `x-paseq`). Not a combining taam.
+  static const TaamInfo paseq = TaamInfo(
+    name: paseqName,
+    disjunctive: true,
+    timeBonus: 0.25,
+    priority: 85,
   );
 
   /// Unicode U+0591–U+05AF → taam.
@@ -56,15 +65,27 @@ class Taamim {
     0x05A8: TaamInfo(name: 'קדמא', disjunctive: false, timeBonus: 0.0, priority: 10),
     0x05A9: TaamInfo(name: 'תלישא קטנה', disjunctive: true, timeBonus: 0.12, priority: 40),
     0x05AA: TaamInfo(name: 'ירח בן יומו', disjunctive: true, timeBonus: 0.35, priority: 68),
+    // WLC 21-book zarqa is encoded as zinor, not U+0598.
+    0x05AE: TaamInfo(name: 'זרקא', disjunctive: true, timeBonus: 0.18, priority: 55),
   };
 
-  static TaamInfo? primaryOf(String fullText, {bool endsVerse = false}) {
+  static TaamInfo? primaryOf(
+    String fullText, {
+    bool endsVerse = false,
+    bool hasPaseq = false,
+  }) {
     TaamInfo? best;
     for (final code in HebrewText.taamCodePoints(fullText)) {
       final info = byCode[code];
       if (info == null) continue;
       if (best == null || info.priority > best.priority) {
         best = info;
+      }
+    }
+    final paseqHere = hasPaseq || fullText.contains('\u05C0');
+    if (paseqHere) {
+      if (best == null || best.priority < paseq.priority) {
+        best = paseq;
       }
     }
     if (endsVerse) {

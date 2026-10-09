@@ -9,7 +9,7 @@
 ```
 Screens Index          ← you are here
 ├── First Window       ← חלון ראשי, בחירה בלבד
-│   └── Settings       ← הגדרות (עדיין לא בקוד)
+│   └── Settings       ← הגדרות
 └── Reading Window     ← שני חלונות המלל
     ├── Practice Reading   ← אימון קריאה
     └── Masmich            ← מסמיך
