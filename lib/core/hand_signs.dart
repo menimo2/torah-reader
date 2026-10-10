@@ -100,6 +100,7 @@ class JerusalemHandSigns {
       colorMs: 1100,
       conjunctive: false,
       shownByDefault: true,
+      imageAsset: 'assets/signs/jerusalem/paseq.png',
     ),
     HandSign(
       id: 'etnachta',
@@ -137,6 +138,7 @@ class JerusalemHandSigns {
       colorMs: 1100,
       conjunctive: false,
       shownByDefault: true,
+      imageAsset: 'assets/signs/jerusalem/zaqef_qatan.png',
     ),
     HandSign(
       id: 'zaqef_gadol',
@@ -239,7 +241,7 @@ class JerusalemHandSigns {
       alephMark: '\u05D0\u059F', // א֟
       colorMs: 1100,
       conjunctive: false,
-      shownByDefault: true,
+      shownByDefault: false,
     ),
     HandSign(
       id: 'telisha_gedola',
@@ -249,6 +251,7 @@ class JerusalemHandSigns {
       colorMs: 1100,
       conjunctive: false,
       shownByDefault: true,
+      imageAsset: 'assets/signs/jerusalem/telisha_gedola.gif',
     ),
     HandSign(
       id: 'pazer',
@@ -258,6 +261,7 @@ class JerusalemHandSigns {
       colorMs: 1100,
       conjunctive: false,
       shownByDefault: true,
+      imageAsset: 'assets/signs/jerusalem/pazer.png',
     ),
     HandSign(
       id: 'munach',
@@ -299,6 +303,7 @@ class JerusalemHandSigns {
       colorMs: 1100,
       conjunctive: true,
       shownByDefault: true,
+      imageAsset: 'assets/signs/jerusalem/darga.gif',
     ),
     HandSign(
       id: 'azla',
@@ -311,6 +316,16 @@ class JerusalemHandSigns {
       imageAsset: 'assets/signs/jerusalem/azla.gif',
     ),
     HandSign(
+      id: 'trei_kadma',
+      taamName: 'תרי קדמין',
+      sephardiName: 'תרי קדמין',
+      alephMark: '\u05D0\u05A8\u0599', // א֨֙
+      colorMs: 1100,
+      conjunctive: false,
+      shownByDefault: true,
+      imageAsset: 'assets/signs/jerusalem/trei_kadma.png',
+    ),
+    HandSign(
       id: 'telisha_qetana',
       taamName: 'תלישא קטנה',
       sephardiName: 'תילשא',
@@ -318,6 +333,7 @@ class JerusalemHandSigns {
       colorMs: 1100,
       conjunctive: true,
       shownByDefault: true,
+      imageAsset: 'assets/signs/jerusalem/telisha_gedola.gif',
     ),
     HandSign(
       id: 'yerach_ben_yomo',

@@ -29,9 +29,15 @@ void main() {
           'geresh' => 'assets/signs/jerusalem/geresh.gif',
           'geresh_muqdam' => 'assets/signs/jerusalem/geresh.gif',
           'azla' => 'assets/signs/jerusalem/azla.gif',
+          'trei_kadma' => 'assets/signs/jerusalem/trei_kadma.png',
           'segolta' => 'assets/signs/jerusalem/segolta.png',
           'tevir' => 'assets/signs/jerusalem/tevir.gif',
           'gershayim' => 'assets/signs/jerusalem/gershayim.png',
+          'pazer' => 'assets/signs/jerusalem/pazer.png',
+          'zaqef_qatan' => 'assets/signs/jerusalem/zaqef_qatan.png',
+          'paseq' => 'assets/signs/jerusalem/paseq.png',
+          'telisha_gedola' => 'assets/signs/jerusalem/telisha_gedola.gif',
+          'darga' => 'assets/signs/jerusalem/darga.gif',
           _ => JerusalemHandSigns.defaultAsset,
         },
       );
@@ -55,6 +61,8 @@ void main() {
     expect(JerusalemHandSigns.of('מונח')?.sephardiName, 'שופר הולך');
     expect(JerusalemHandSigns.of('אתנחתא')?.sephardiName, 'אתנח');
     expect(JerusalemHandSigns.of('קדמא')?.sephardiName, 'אזלא');
+    expect(JerusalemHandSigns.of('תרי קדמין')?.sephardiName, 'תרי קדמין');
+    expect(JerusalemHandSigns.of('תרי קדמין')?.id, 'trei_kadma');
     expect(JerusalemHandSigns.of('סוף פסוק')?.alephMark, 'א׃');
   });
 
@@ -77,6 +85,7 @@ void main() {
       'pazer',
       'darga',
       'azla',
+      'trei_kadma',
       'telisha_qetana',
     };
     expect(
@@ -87,6 +96,7 @@ void main() {
     expect(JerusalemHandSigns.shownOf('גרשים'), isNotNull);
     expect(JerusalemHandSigns.shownOf('פסק'), isNotNull);
     expect(JerusalemHandSigns.shownOf('קדמא'), isNotNull);
+    expect(JerusalemHandSigns.shownOf('תרי קדמין'), isNotNull);
     expect(JerusalemHandSigns.shownOf('טפחא'), isNull);
     expect(JerusalemHandSigns.shownOf('פשטא'), isNull);
     expect(JerusalemHandSigns.shownOf('מונח'), isNull);

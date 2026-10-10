@@ -42,6 +42,12 @@ flutter:
     - assets/signs/jerusalem/segolta.png
     - assets/signs/jerusalem/tevir.gif
     - assets/signs/jerusalem/gershayim.png
+    - assets/signs/jerusalem/pazer.png
+    - assets/signs/jerusalem/zaqef_qatan.png
+    - assets/signs/jerusalem/paseq.png
+    - assets/signs/jerusalem/telisha_gedola.gif
+    - assets/signs/jerusalem/darga.gif
+    - assets/signs/jerusalem/trei_kadma.png
   fonts:
     - family: SBLHebrew
       fonts:

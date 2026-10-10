@@ -8,10 +8,11 @@ using System.Runtime.InteropServices;
 
 public static class MakeQuarterArcGif {
   public static int Main(string[] args) {
-    string handSrc = args[0];
-    string outGif = args[1];
-    string previewDir = args.Length > 2 ? args[2] : null;
-    Run(handSrc, outGif, previewDir);
+    if (args.Length > 0 && args[0] == "z") {
+      RunZ(args[1], args[2], args.Length > 3 ? args[3] : null);
+      return 0;
+    }
+    Run(args[0], args[1], args.Length > 2 ? args[2] : null);
     return 0;
   }
 
@@ -107,16 +108,128 @@ public static class MakeQuarterArcGif {
         frames.Add(canvas);
       }
 
-      WriteGif89a(outGif, frames, delayCs);
+      WriteGif89a(outGif, frames, delayCs, Color.White);
       Console.WriteLine("wrote " + outGif + " frames=" + frames.Count + " totalMs=" + (frames.Count * delayCs * 10));
       foreach (var f in frames) f.Dispose();
       hand.Dispose();
     }
   }
 
-  static void WriteGif89a(string path, List<Bitmap> frames, int delayCs) {
+  static readonly Color Cream = Color.FromArgb(255, 250, 247, 240);
+
+  public static void RunZ(string handSrc, string outGif, string previewDir) {
+    int size = 1024;
+    int framesN = 12;
+    int delayCs = 7; // 70ms * 12 = 840ms
+    if (previewDir != null) Directory.CreateDirectory(previewDir);
+
+    using (var src = new Bitmap(handSrc))
+    using (var cropped = CropHand(src)) {
+      cropped.RotateFlip(RotateFlipType.RotateNoneFlipX);
+      float handScale = 0.42f;
+      int hw = Math.Max(1, (int)(cropped.Width * handScale));
+      int hh = Math.Max(1, (int)(cropped.Height * handScale));
+      var hand = new Bitmap(hw, hh, PixelFormat.Format32bppArgb);
+      using (var g = Graphics.FromImage(hand)) {
+        g.Clear(Color.Transparent);
+        g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+        g.DrawImage(cropped, 0, 0, hw, hh);
+      }
+
+      int tipX = hw / 2, tipY = 0;
+      for (int y = 0; y < hh; y++) {
+        int count = 0, sum = 0;
+        for (int x = 0; x < hw; x++) {
+          if (hand.GetPixel(x, y).A < 200) continue;
+          count++;
+          sum += x;
+        }
+        if (count >= 8) {
+          tipY = y;
+          tipX = sum / count;
+          break;
+        }
+      }
+      PointF tipOff = new PointF(tipX, tipY);
+
+      float left = tipOff.X + 36f;
+      float right = size - (hw - tipOff.X) - 36f;
+      float top = tipOff.Y + 28f;
+      float zTop = top;
+      float zBottom = zTop + (right - left) * 0.62f;
+      var corners = new PointF[] {
+        new PointF(left, zTop),
+        new PointF(right, zTop),
+        new PointF(left, zBottom),
+        new PointF(right, zBottom),
+      };
+      var tipPath = SamplePolyline(corners, framesN);
+
+      var frames = new List<Bitmap>();
+      for (int i = 0; i < framesN; i++) {
+        var canvas = new Bitmap(size, size, PixelFormat.Format24bppRgb);
+        using (var g = Graphics.FromImage(canvas)) {
+          g.SmoothingMode = SmoothingMode.AntiAlias;
+          g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+          g.Clear(Cream);
+          using (var pen = new Pen(Color.FromArgb(255, 70, 70, 70), 10f)) {
+            pen.StartCap = LineCap.Round;
+            pen.EndCap = LineCap.Round;
+            pen.LineJoin = LineJoin.Round;
+            if (i == 0) {
+              g.FillEllipse(pen.Brush, tipPath[0].X - 5f, tipPath[0].Y - 5f, 10f, 10f);
+            } else {
+              g.DrawLines(pen, tipPath.GetRange(0, i + 1).ToArray());
+            }
+          }
+          g.DrawImage(hand, tipPath[i].X - tipOff.X, tipPath[i].Y - tipOff.Y, hw, hh);
+        }
+        if (previewDir != null) {
+          canvas.Save(Path.Combine(previewDir, "f" + i + ".png"), ImageFormat.Png);
+        }
+        frames.Add(canvas);
+      }
+
+      WriteGif89a(outGif, frames, delayCs, Cream);
+      Console.WriteLine("wrote " + outGif + " frames=" + frames.Count + " totalMs=" + (frames.Count * delayCs * 10));
+      foreach (var f in frames) f.Dispose();
+      hand.Dispose();
+    }
+  }
+
+  static List<PointF> SamplePolyline(PointF[] corners, int framesN) {
+    var lengths = new List<float>();
+    float total = 0f;
+    for (int i = 0; i < corners.Length - 1; i++) {
+      float dx = corners[i + 1].X - corners[i].X;
+      float dy = corners[i + 1].Y - corners[i].Y;
+      float len = (float)Math.Sqrt(dx * dx + dy * dy);
+      lengths.Add(len);
+      total += len;
+    }
+    var pts = new List<PointF>();
+    for (int i = 0; i < framesN; i++) {
+      float dist = total * i / (float)(framesN - 1);
+      float walked = 0f;
+      int seg = 0;
+      while (seg < lengths.Count - 1 && walked + lengths[seg] < dist) {
+        walked += lengths[seg];
+        seg++;
+      }
+      float t = lengths[seg] <= 0.001f ? 0f : (dist - walked) / lengths[seg];
+      if (t < 0f) t = 0f;
+      if (t > 1f) t = 1f;
+      pts.Add(new PointF(
+        corners[seg].X + (corners[seg + 1].X - corners[seg].X) * t,
+        corners[seg].Y + (corners[seg + 1].Y - corners[seg].Y) * t));
+    }
+    return pts;
+  }
+
+  static void WriteGif89a(string path, List<Bitmap> frames, int delayCs, Color background) {
     int w = frames[0].Width, h = frames[0].Height;
     List<Color> palette = BuildPalette(frames, 256);
+    palette[0] = background;
     using (var fs = new FileStream(path, FileMode.Create, FileAccess.Write))
     using (var bw = new BinaryWriter(fs)) {
       bw.Write(new byte[] { (byte)'G', (byte)'I', (byte)'F', (byte)'8', (byte)'9', (byte)'a' });

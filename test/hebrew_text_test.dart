@@ -39,6 +39,8 @@ void main() {
   test('WLC zinor is zarqa in the 21 books', () {
     const elohimZinor = 'אֱלֹהִים\u05AE';
     expect(Taamim.primaryOf(elohimZinor)?.name, 'זרקא');
+    expect(Taamim.primaryOf('תֹ֨הוּ֙')?.name, 'תרי קדמין');
+    expect(Taamim.primaryOf('אוֹר֙')?.name, 'פשטא');
     expect(HebrewText.displayFull(elohimZinor), elohimZinor);
   });
 }

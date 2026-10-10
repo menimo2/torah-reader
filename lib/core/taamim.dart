@@ -22,12 +22,21 @@ class Taamim {
 
   static const String sofPasuqName = 'סוף פסוק';
   static const String paseqName = 'פסק';
+  static const String treiKadmaName = 'תרי קדמין';
 
   static const TaamInfo sofPasuq = TaamInfo(
     name: sofPasuqName,
     disjunctive: true,
     timeBonus: 0.80,
     priority: 100,
+  );
+
+  /// Kadma and pashta on the same word. Its hand sign is not אזלא.
+  static const TaamInfo treiKadma = TaamInfo(
+    name: treiKadmaName,
+    disjunctive: true,
+    timeBonus: 0.15,
+    priority: 51,
   );
 
   /// Vertical bar after a word (WLC `x-paseq`). Not a combining taam.
@@ -74,13 +83,19 @@ class Taamim {
     bool endsVerse = false,
     bool hasPaseq = false,
   }) {
+    final codes = HebrewText.taamCodePoints(fullText);
+    final hasTreiKadma = codes.contains(0x05A8) && codes.contains(0x0599);
     TaamInfo? best;
-    for (final code in HebrewText.taamCodePoints(fullText)) {
+    for (final code in codes) {
+      if (hasTreiKadma && (code == 0x05A8 || code == 0x0599)) continue;
       final info = byCode[code];
       if (info == null) continue;
       if (best == null || info.priority > best.priority) {
         best = info;
       }
+    }
+    if (hasTreiKadma && (best == null || best.priority < treiKadma.priority)) {
+      best = treiKadma;
     }
     final paseqHere = hasPaseq || fullText.contains('\u05C0');
     if (paseqHere) {
