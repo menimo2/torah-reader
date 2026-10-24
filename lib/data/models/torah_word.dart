@@ -17,6 +17,7 @@ class TorahWord {
   final double taamTimeBonus;
 
   String get nikudOnly => HebrewText.nikudOnly(fullText);
+  String get taamimOnly => HebrewText.taamimOnly(fullText);
   String get bare => HebrewText.bare(fullText);
 
   String display(TextVersion version) {
@@ -25,6 +26,8 @@ class TorahWord {
         return HebrewText.displayFull(fullText);
       case TextVersion.nikud:
         return nikudOnly;
+      case TextVersion.taamim:
+        return taamimOnly;
       case TextVersion.bare:
         return bare;
     }
@@ -68,4 +71,4 @@ class TorahWord {
   }
 }
 
-enum TextVersion { full, nikud, bare }
+enum TextVersion { full, nikud, taamim, bare }

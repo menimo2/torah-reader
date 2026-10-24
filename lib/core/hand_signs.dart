@@ -352,6 +352,13 @@ class JerusalemHandSigns {
   static HandSign? of(String? taamName) =>
       taamName == null ? null : byTaamName[taamName];
 
+  static HandSign? byId(String id) {
+    for (final sign in all) {
+      if (sign.id == id) return sign;
+    }
+    return null;
+  }
+
   /// Sign to draw in masmich. Hidden taamim still color the word.
   /// [enabledIds] comes from Settings; omit to use [shownByDefault].
   static HandSign? shownOf(String? taamName, {Set<String>? enabledIds}) {

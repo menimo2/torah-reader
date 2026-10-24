@@ -11,11 +11,15 @@ class SignSettings {
     required this.pack,
     required this.shownIds,
     this.overrides = const {},
+    this.colorMs = const {},
   });
 
   final SignPack pack;
   final Set<String> shownIds;
   final Map<String, Uint8List> overrides;
+
+  /// Per-taam color duration, only where it differs from the catalog.
+  final Map<String, int> colorMs;
 
   static Set<String> get defaultShownIds => {
         for (final sign in JerusalemHandSigns.starterSet) sign.id,
@@ -28,9 +32,13 @@ class SignSettings {
 
   bool isShown(String id) => shownIds.contains(id);
 
+  /// Catalog time, unless this taam was changed in Settings.
+  int colorMsOf(HandSign sign) => colorMs[sign.id] ?? sign.colorMs;
+
   bool get isAtDefaults =>
       pack == SignPack.image &&
       overrides.isEmpty &&
+      colorMs.isEmpty &&
       shownIds.length == defaultShownIds.length &&
       shownIds.containsAll(defaultShownIds);
 
@@ -38,11 +46,13 @@ class SignSettings {
     SignPack? pack,
     Set<String>? shownIds,
     Map<String, Uint8List>? overrides,
+    Map<String, int>? colorMs,
   }) {
     return SignSettings(
       pack: pack ?? this.pack,
       shownIds: shownIds ?? this.shownIds,
       overrides: overrides ?? this.overrides,
+      colorMs: colorMs ?? this.colorMs,
     );
   }
 
@@ -54,6 +64,19 @@ class SignSettings {
 
   SignSettings withOverride(String id, Uint8List bytes) {
     return copyWith(overrides: {...overrides, id: bytes});
+  }
+
+  /// [ms] outside 1–60000 is ignored. The catalog value clears the override.
+  SignSettings withColorMs(String id, int ms) {
+    final sign = JerusalemHandSigns.byId(id);
+    if (sign == null || ms < 1 || ms > 60000) return this;
+    final next = {...colorMs};
+    if (ms == sign.colorMs) {
+      next.remove(id);
+    } else {
+      next[id] = ms;
+    }
+    return copyWith(colorMs: next);
   }
 
   /// Shown taamim first, catalog order inside each group.
@@ -75,6 +98,7 @@ class SignSettingsNotifier extends Notifier<SignSettings> {
   static const _packKey = 'sign_pack';
   static const _shownKey = 'sign_shown_ids';
   static const _overrideIdsKey = 'sign_override_ids';
+  static const _colorKey = 'sign_color_ms';
   static String _overrideKey(String id) => 'sign_override_$id';
 
   @override
@@ -117,7 +141,30 @@ class SignSettingsNotifier extends Notifier<SignSettings> {
     }
 
     hydrated = true;
-    state = SignSettings(pack: pack, shownIds: shown, overrides: overrides);
+    state = SignSettings(
+      pack: pack,
+      shownIds: shown,
+      overrides: overrides,
+      colorMs: _readColorMs(prefs.getString(_colorKey)),
+    );
+  }
+
+  static Map<String, int> _readColorMs(String? raw) {
+    if (raw == null) return const {};
+    final decoded = jsonDecode(raw);
+    if (decoded is! Map) return const {};
+    final out = <String, int>{};
+    for (final entry in decoded.entries) {
+      final id = entry.key;
+      if (id is! String) continue;
+      final sign = JerusalemHandSigns.byId(id);
+      final value = entry.value;
+      if (sign == null || value is! num) continue;
+      final ms = value.round();
+      if (ms < 1 || ms > 60000 || ms == sign.colorMs) continue;
+      out[id] = ms;
+    }
+    return out;
   }
 
   Future<void> setPack(SignPack pack) async {
@@ -130,6 +177,16 @@ class SignSettingsNotifier extends Notifier<SignSettings> {
     state = state.toggleShown(id);
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_shownKey, jsonEncode(state.shownIds.toList()));
+  }
+
+  Future<void> setColorMs(String id, int ms) async {
+    state = state.withColorMs(id, ms);
+    final prefs = await SharedPreferences.getInstance();
+    if (state.colorMs.isEmpty) {
+      await prefs.remove(_colorKey);
+    } else {
+      await prefs.setString(_colorKey, jsonEncode(state.colorMs));
+    }
   }
 
   Future<void> setOverride(String id, Uint8List bytes) async {
@@ -152,6 +209,7 @@ class SignSettingsNotifier extends Notifier<SignSettings> {
     await prefs.remove(_packKey);
     await prefs.remove(_shownKey);
     await prefs.remove(_overrideIdsKey);
+    await prefs.remove(_colorKey);
     state = SignSettings.defaults;
   }
 }

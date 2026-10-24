@@ -83,6 +83,10 @@ class ReadingScreen extends ConsumerWidget {
                       child: Text('עם ניקוד'),
                     ),
                     DropdownMenuItem(
+                      value: TextVersion.taamim,
+                      child: Text('עם טעמים'),
+                    ),
+                    DropdownMenuItem(
                       value: TextVersion.full,
                       child: Text('הכל ביחד'),
                     ),

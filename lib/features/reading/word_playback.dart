@@ -27,6 +27,9 @@ class WordPlaybackController extends ChangeNotifier {
   /// Which masmich signs are on. From Settings.
   Set<String> shownSignIds;
 
+  /// Color durations changed in Settings, keyed by sign id.
+  Map<String, int> colorMsById = {};
+
   Timer? _timer;
   List<TorahWord> _words = const [];
 
@@ -123,7 +126,7 @@ class WordPlaybackController extends ChangeNotifier {
     currentIndex = index;
     _syncDisplayedSign();
     notifyListeners();
-    final ms = JerusalemHandSigns.colorMsFor(_words[index].taamName);
+    final ms = _colorMs(_words[index].taamName);
     final scaled = (ms * speedFactor).round().clamp(1, 60000);
     _timer = Timer(Duration(milliseconds: scaled), _advance);
   }
@@ -160,8 +163,14 @@ class WordPlaybackController extends ChangeNotifier {
       return;
     }
     _holdingSign = true;
-    final ms = (sign.colorMs * speedFactor).round().clamp(1, 60000);
+    final ms = (_colorMs(sign.taamName) * speedFactor).round().clamp(1, 60000);
     _signTimer = Timer(Duration(milliseconds: ms), _onSignHoldDone);
+  }
+
+  int _colorMs(String? taamName) {
+    final sign = JerusalemHandSigns.of(taamName);
+    if (sign == null) return JerusalemHandSigns.noTaamColorMs;
+    return colorMsById[sign.id] ?? sign.colorMs;
   }
 
   void _onSignHoldDone() {

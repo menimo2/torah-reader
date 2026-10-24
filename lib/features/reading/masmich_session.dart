@@ -74,16 +74,32 @@ class _MasmichScreenState extends ConsumerState<MasmichScreen> {
   Widget build(BuildContext context) {
     final settings = ref.watch(signSettingsProvider);
     _playback.shownSignIds = settings.shownIds;
+    _playback.colorMsById = settings.colorMs;
     final counting = _playback.status == PlaybackStatus.countdown;
     final sign = _playback.displayedSign;
+    final scheme = Theme.of(context).colorScheme;
+    final running = _playback.isActive;
 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leadingWidth: 88,
-        leading: TextButton(
-          onPressed: _words.isEmpty ? null : _toggle,
-          child: Text(_playback.isActive ? 'עצור' : 'התחל'),
+        leadingWidth: 124,
+        leading: Padding(
+          padding: const EdgeInsetsDirectional.only(start: 8),
+          child: Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: FilledButton.icon(
+              onPressed: _words.isEmpty ? null : _toggle,
+              icon: Icon(running ? Icons.stop : Icons.play_arrow, size: 18),
+              label: Text(running ? 'עצור' : 'התחל'),
+              style: FilledButton.styleFrom(
+                visualDensity: VisualDensity.compact,
+                padding: const EdgeInsetsDirectional.only(start: 10, end: 12),
+                backgroundColor: running ? scheme.error : scheme.primary,
+                foregroundColor: running ? scheme.onError : scheme.onPrimary,
+              ),
+            ),
+          ),
         ),
         title: Text(widget.title),
         actions: [

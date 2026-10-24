@@ -28,6 +28,15 @@ void main() {
     expect(HebrewText.nikudOnly('עַל־פְּנֵי'), 'עַל-פְּנֵי');
   });
 
+  test('taamim-only drops nikud and keeps cantillation', () {
+    expect(HebrewText.taamimOnly(bereshit), 'בראש\u0596ית');
+    expect(HebrewText.taamimOnly(elohim), 'אלה\u0591ים');
+    expect(HebrewText.taamimOnly('הָאָֽרֶץ׃'), 'הארץ׃');
+    expect(HebrewText.taamimOnly('עַל־פְּנֵי'), 'על-פני');
+    expect(HebrewText.taamimOnly('אֱלֹהִים\u05AE'), 'אלהים\u05AE');
+    expect(HebrewText.taamimOnly('תֹ֨הוּ֙'), 'ת\u05A8הו\u0599');
+  });
+
   test('primary taam from unicode', () {
     expect(Taamim.primaryOf(bereshit)?.name, 'טפחא');
     expect(Taamim.primaryOf(bara)?.name, 'מונח');

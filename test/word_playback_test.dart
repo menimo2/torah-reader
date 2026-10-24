@@ -52,6 +52,21 @@ void main() {
     });
   });
 
+  test('settings color time replaces the catalog duration', () {
+    fakeAsync((async) {
+      final playback = WordPlaybackController()..colorMsById = {'revia': 250};
+      playback.start(words);
+
+      async.elapse(const Duration(seconds: 4));
+      expect(playback.currentIndex, 0);
+
+      async.elapse(const Duration(milliseconds: 250));
+      expect(playback.currentIndex, 1);
+
+      playback.dispose();
+    });
+  });
+
   test('sign is held for the upcoming taam colorMs', () {
     fakeAsync((async) {
       final playback = WordPlaybackController();

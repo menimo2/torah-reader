@@ -1,7 +1,7 @@
-/// Unicode filters for the three Torah text versions.
+/// Unicode filters for the Torah text versions.
 ///
-/// Full text is stored once (nikud + taamim). Nikud-only and bare
-/// (sefer Torah) are derived at runtime.
+/// Full text is stored once (nikud + taamim). Nikud-only, taamim-only,
+/// and bare (sefer Torah) are derived at runtime.
 class HebrewText {
   HebrewText._();
 
@@ -46,6 +46,23 @@ class HebrewText {
           c == _paseq ||
           c == _slash ||
           c == _narrowNbsp) {
+        continue;
+      }
+      if (isMaqaf(c)) {
+        out.add(_hyphen);
+        continue;
+      }
+      out.add(c);
+    }
+    return String.fromCharCodes(out);
+  }
+
+  /// Letters and taamim, without nikud. Sof pasuq and paseq stay.
+  /// Maqaf becomes a plain hyphen. Shin and sin dots count as nikud.
+  static String taamimOnly(String fullText) {
+    final out = <int>[];
+    for (final c in fullText.runes) {
+      if (isNikud(c) || c == _slash || c == _narrowNbsp) {
         continue;
       }
       if (isMaqaf(c)) {

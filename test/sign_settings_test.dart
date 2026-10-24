@@ -1,11 +1,13 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:torah_reader/core/hand_signs.dart';
 import 'package:torah_reader/data/sign_settings.dart';
+import 'package:torah_reader/features/settings/settings_screen.dart';
 
 void main() {
   test('first run shows the starter set', () {
@@ -64,6 +66,20 @@ void main() {
           .isAtDefaults,
       isFalse,
     );
+    expect(
+      SignSettings.defaults.withColorMs('revia', 1500).isAtDefaults,
+      isFalse,
+    );
+  });
+
+  test('color time is stored per taam and catalog value clears it', () {
+    final changed = SignSettings.defaults.withColorMs('revia', 1500);
+    expect(changed.colorMs['revia'], 1500);
+    expect(changed.colorMsOf(JerusalemHandSigns.byId('revia')!), 1500);
+    expect(changed.colorMs.containsKey('etnachta'), isFalse);
+    final cleared = changed.withColorMs('revia', 1100);
+    expect(cleared.colorMs.containsKey('revia'), isFalse);
+    expect(SignSettings.defaults.withColorMs('revia', 0).colorMs, isEmpty);
   });
 
   test('restoreDefaults clears persisted pack, shown set, and overrides',
@@ -73,6 +89,7 @@ void main() {
       'sign_shown_ids': jsonEncode(['munach']),
       'sign_override_ids': ['zarqa'],
       'sign_override_zarqa': base64Encode([1, 2, 3]),
+      'sign_color_ms': jsonEncode({'revia': 1500}),
     });
     final container = ProviderContainer();
     addTearDown(container.dispose);
@@ -82,6 +99,7 @@ void main() {
       await Future<void>.delayed(const Duration(milliseconds: 5));
     }
     expect(container.read(signSettingsProvider).pack, SignPack.name);
+    expect(container.read(signSettingsProvider).colorMs['revia'], 1500);
 
     await notifier.restoreDefaults();
 
@@ -91,6 +109,7 @@ void main() {
     expect(prefs.getString('sign_shown_ids'), isNull);
     expect(prefs.getStringList('sign_override_ids'), isNull);
     expect(prefs.getString('sign_override_zarqa'), isNull);
+    expect(prefs.getString('sign_color_ms'), isNull);
   });
 
   test('orderedSigns puts shown taamim first, catalog order inside groups', () {
@@ -107,5 +126,25 @@ void main() {
       ids.where((id) => settings.isShown(id)).toList(),
       ids.take(settings.shownIds.length).toList(),
     );
+  });
+
+  testWidgets('saving a taam time updates the settings card', (tester) async {
+    SharedPreferences.setMockInitialValues({});
+    await tester.pumpWidget(
+      const ProviderScope(
+        child: MaterialApp(home: SettingsScreen()),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byKey(const ValueKey('color-ms-sof_pasuq')));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byType(TextField), '1500');
+    await tester.tap(find.text('שמירה'));
+    await tester.pumpAndSettle();
+
+    expect(find.textContaining('1500'), findsWidgets);
+    final prefs = await SharedPreferences.getInstance();
+    expect(prefs.getString('sign_color_ms'), contains('1500'));
   });
 }

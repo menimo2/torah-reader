@@ -74,7 +74,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
           const SizedBox(height: 8),
           Text(
-            'כל טעם בשלוש הערכות, עם זמן הצבע. המתג = האם המסמיך מציג אותו. אפשר להחליף תמונה.',
+            'כל טעם בשלוש הערכות, עם זמן הצבע. המתג = האם המסמיך מציג אותו. אפשר להחליף תמונה וזמן.',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
@@ -84,6 +84,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             _TaamSettingsCard(
               sign: sign,
               shown: settings.isShown(sign.id),
+              colorMs: settings.colorMsOf(sign),
               overrideBytes: settings.overrides[sign.id],
             ),
         ],
@@ -98,7 +99,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         return AlertDialog(
           title: const Text('שחזור הגדרות?'),
           content: const Text(
-            'הערכה, הטעמים שמוצגים במסמיך, והתמונות שהוחלפו יחזרו לברירת המחדל.',
+            'הערכה, הטעמים שמוצגים במסמיך, הזמנים, והתמונות שהוחלפו יחזרו לברירת המחדל.',
           ),
           actions: [
             TextButton(
@@ -126,11 +127,13 @@ class _TaamSettingsCard extends ConsumerWidget {
   const _TaamSettingsCard({
     required this.sign,
     required this.shown,
+    required this.colorMs,
     this.overrideBytes,
   });
 
   final HandSign sign;
   final bool shown;
+  final int colorMs;
   final Uint8List? overrideBytes;
 
   @override
@@ -162,10 +165,19 @@ class _TaamSettingsCard extends ConsumerWidget {
                 Expanded(
                   child: _LabeledBox(
                     label: 'זמן',
-                    child: Text(
-                      '${sign.colorMs}\nמ״ש',
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.titleSmall,
+                    child: Column(
+                      children: [
+                        Text(
+                          '$colorMs\nמ״ש',
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.titleSmall,
+                        ),
+                        TextButton(
+                          key: ValueKey('color-ms-${sign.id}'),
+                          onPressed: () => _editColorMs(context, ref),
+                          child: const Text('שנה'),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -242,6 +254,85 @@ class _TaamSettingsCard extends ConsumerWidget {
     final bytes = file?.bytes;
     if (bytes == null || bytes.isEmpty) return;
     await ref.read(signSettingsProvider.notifier).setOverride(sign.id, bytes);
+  }
+
+  Future<void> _editColorMs(BuildContext context, WidgetRef ref) async {
+    final saved = await showDialog<int>(
+      context: context,
+      builder: (dialogContext) {
+        return _ColorMsDialog(sign: sign, colorMs: colorMs);
+      },
+    );
+    if (saved == null) return;
+    await ref.read(signSettingsProvider.notifier).setColorMs(sign.id, saved);
+  }
+}
+
+class _ColorMsDialog extends StatefulWidget {
+  const _ColorMsDialog({required this.sign, required this.colorMs});
+
+  final HandSign sign;
+  final int colorMs;
+
+  @override
+  State<_ColorMsDialog> createState() => _ColorMsDialogState();
+}
+
+class _ColorMsDialogState extends State<_ColorMsDialog> {
+  late final TextEditingController _controller =
+      TextEditingController(text: '${widget.colorMs}');
+  var _error = '';
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _save() {
+    final ms = int.tryParse(_controller.text.trim());
+    if (ms == null || ms < 1 || ms > 60000) {
+      setState(() {
+        _error = 'יש להזין מספר בין 1 ל-60000';
+      });
+      return;
+    }
+    Navigator.of(context).pop(ms);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text(widget.sign.sephardiName),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text('כמה מילישניות המילה צבועה והסימן נשאר בפס.'),
+          const SizedBox(height: 12),
+          TextField(
+            controller: _controller,
+            autofocus: true,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              labelText: 'מ״ש',
+              helperText: 'ברירת מחדל: ${widget.sign.colorMs}',
+              errorText: _error.isEmpty ? null : _error,
+            ),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('ביטול'),
+        ),
+        FilledButton(
+          onPressed: _save,
+          child: const Text('שמירה'),
+        ),
+      ],
+    );
   }
 }
 

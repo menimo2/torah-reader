@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:torah_reader/data/models/torah_verse.dart';
 import 'package:torah_reader/data/models/torah_word.dart';
 import 'package:torah_reader/features/reading/masmich_session.dart';
@@ -86,5 +88,37 @@ void main() {
     expect(find.text('בראשית'), findsOneWidget);
     expect(first.top, closeTo(second.top, 0.1));
     expect(first.left, greaterThan(second.right));
+  });
+
+  testWidgets('start control is a filled button', (tester) async {
+    SharedPreferences.setMockInitialValues({});
+    await tester.pumpWidget(
+      const ProviderScope(
+        child: MaterialApp(
+          home: MasmichScreen(
+            title: 'בראשית',
+            verses: [
+              TorahVerse(
+                osisId: 'Gen.1.1',
+                book: 'Gen',
+                chapter: 1,
+                verse: 1,
+                words: [TorahWord(fullText: 'בראשית', wordIndex: 0)],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.widgetWithText(FilledButton, 'התחל'), findsOneWidget);
+    await tester.tap(find.widgetWithText(FilledButton, 'התחל'));
+    await tester.pump();
+    expect(find.widgetWithText(FilledButton, 'עצור'), findsOneWidget);
+
+    await tester.tap(find.widgetWithText(FilledButton, 'עצור'));
+    await tester.pumpAndSettle();
+    expect(find.widgetWithText(FilledButton, 'התחל'), findsOneWidget);
   });
 }
