@@ -5,6 +5,7 @@ import '../../core/parashot.dart';
 import '../../core/reading_mode.dart';
 import '../../data/models/torah_word.dart';
 import '../../data/providers.dart';
+import 'aliyah_quick_bar.dart';
 import 'hold_to_peek.dart';
 import 'masmich_session.dart';
 import 'torah_chapter_view.dart';
@@ -62,6 +63,7 @@ class ReadingScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
+          const AliyahQuickBar(),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
             child: InputDecorator(
@@ -117,6 +119,7 @@ class ReadingScreen extends ConsumerWidget {
                 builder: (context, peeking) {
                   final shown = peeking ? TextVersion.full : displayVersion;
                   return TorahChapterView(
+                    key: ValueKey(selection.aliyahId),
                     verses: data,
                     version: shown,
                     showVerseRefs: true,

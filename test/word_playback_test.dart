@@ -107,6 +107,40 @@ void main() {
     });
   });
 
+  test('pause keeps the place and resume continues the rest', () {
+    fakeAsync((async) {
+      var now = DateTime(2026);
+      final playback = WordPlaybackController(now: () => now);
+      playback.start(words);
+      for (var i = 0; i < 4; i++) {
+        now = now.add(const Duration(seconds: 1));
+        async.elapse(const Duration(seconds: 1));
+      }
+      expect(playback.currentIndex, 0);
+      expect(playback.highlightedIndex, 0);
+
+      now = now.add(const Duration(milliseconds: 400));
+      async.elapse(const Duration(milliseconds: 400));
+      playback.pause();
+      expect(playback.status, PlaybackStatus.paused);
+      expect(playback.highlightedIndex, 0);
+
+      now = now.add(const Duration(seconds: 5));
+      async.elapse(const Duration(seconds: 5));
+      expect(playback.currentIndex, 0);
+
+      playback.resume();
+      now = now.add(const Duration(milliseconds: 699));
+      async.elapse(const Duration(milliseconds: 699));
+      expect(playback.currentIndex, 0);
+      now = now.add(const Duration(milliseconds: 1));
+      async.elapse(const Duration(milliseconds: 1));
+      expect(playback.currentIndex, 1);
+
+      playback.dispose();
+    });
+  });
+
   test('stop cancels countdown', () {
     fakeAsync((async) {
       final playback = WordPlaybackController();

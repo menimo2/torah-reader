@@ -6,7 +6,7 @@ import '../../core/hand_signs.dart';
 import '../../data/models/torah_verse.dart';
 import '../../data/models/torah_word.dart';
 
-enum PlaybackStatus { idle, countdown, playing, finished }
+enum PlaybackStatus { idle, countdown, playing, paused, finished }
 
 /// Word-by-word coloring. Shared by masmich (and later practice).
 ///
@@ -16,10 +16,14 @@ class WordPlaybackController extends ChangeNotifier {
   WordPlaybackController({
     this.speedFactor = 1,
     this.countdownStep = const Duration(seconds: 1),
+    DateTime Function()? now,
     Set<String>? shownSignIds,
-  }) : shownSignIds = shownSignIds ?? {
+  })  : now = now ?? DateTime.now,
+        shownSignIds = shownSignIds ?? {
           for (final sign in JerusalemHandSigns.starterSet) sign.id,
         };
+
+  final DateTime Function() now;
 
   final double speedFactor;
   final Duration countdownStep;
@@ -31,6 +35,13 @@ class WordPlaybackController extends ChangeNotifier {
   Map<String, int> colorMsById = {};
 
   Timer? _timer;
+  DateTime? _segmentStarted;
+  int? _segmentBudgetMs;
+  DateTime? _signStarted;
+  int? _signBudgetMs;
+  int? _pausedSegmentLeft;
+  int? _pausedSignLeft;
+  PlaybackStatus? _pausedStatus;
   List<TorahWord> _words = const [];
 
   PlaybackStatus status = PlaybackStatus.idle;
@@ -49,6 +60,25 @@ class WordPlaybackController extends ChangeNotifier {
 
   bool get isActive =>
       status == PlaybackStatus.countdown || status == PlaybackStatus.playing;
+
+  bool get isPaused => status == PlaybackStatus.paused;
+
+  /// Countdown number stays on screen while that countdown is paused.
+  bool get showCountdown =>
+      status == PlaybackStatus.countdown ||
+      (status == PlaybackStatus.paused &&
+          _pausedStatus == PlaybackStatus.countdown);
+
+  /// Word color stays while playback is paused on that word.
+  int? get highlightedIndex {
+    if (status == PlaybackStatus.playing) return currentIndex;
+    if (status == PlaybackStatus.paused &&
+        _pausedStatus == PlaybackStatus.playing &&
+        currentIndex >= 0) {
+      return currentIndex;
+    }
+    return null;
+  }
 
   TorahWord? get currentWord {
     if (status != PlaybackStatus.playing) return null;
@@ -95,17 +125,79 @@ class WordPlaybackController extends ChangeNotifier {
     currentIndex = -1;
     _syncDisplayedSign();
     notifyListeners();
-    _timer = Timer(countdownStep, _onCountdownTick);
+    _arm(countdownStep.inMilliseconds, _onCountdownTick);
+  }
+
+  /// Freeze the countdown or the current word. The place is kept.
+  void pause() {
+    if (!isActive) return;
+    _pausedSegmentLeft = _remaining(_segmentStarted, _segmentBudgetMs);
+    _pausedSignLeft =
+        _holdingSign ? _remaining(_signStarted, _signBudgetMs) : null;
+    _timer?.cancel();
+    _timer = null;
+    _signTimer?.cancel();
+    _signTimer = null;
+    _pausedStatus = status;
+    status = PlaybackStatus.paused;
+    notifyListeners();
+  }
+
+  /// Continue from [pause]. Does not go back to the beginning.
+  void resume() {
+    if (status != PlaybackStatus.paused) return;
+    final back = _pausedStatus ?? PlaybackStatus.playing;
+    final segmentLeft = _pausedSegmentLeft ?? 1;
+    final signLeft = _pausedSignLeft;
+    _pausedStatus = null;
+    _pausedSegmentLeft = null;
+    _pausedSignLeft = null;
+    status = back;
+    if (back == PlaybackStatus.countdown) {
+      _arm(segmentLeft, _onCountdownTick);
+    } else {
+      _arm(segmentLeft, _advance);
+    }
+    if (_holdingSign && signLeft != null) {
+      _armSign(signLeft);
+    }
+    notifyListeners();
   }
 
   void stop() {
     _timer?.cancel();
     _timer = null;
+    _segmentStarted = null;
+    _segmentBudgetMs = null;
+    _pausedSegmentLeft = null;
+    _pausedSignLeft = null;
+    _pausedStatus = null;
     _clearDisplayedSign();
     status = PlaybackStatus.idle;
     countdownRemaining = null;
     currentIndex = -1;
     notifyListeners();
+  }
+
+  void _arm(int milliseconds, void Function() onFire) {
+    final ms = milliseconds < 1 ? 1 : milliseconds;
+    _segmentBudgetMs = ms;
+    _segmentStarted = now();
+    _timer = Timer(Duration(milliseconds: ms), onFire);
+  }
+
+  void _armSign(int milliseconds) {
+    final ms = milliseconds < 1 ? 1 : milliseconds;
+    _signBudgetMs = ms;
+    _signStarted = now();
+    _signTimer = Timer(Duration(milliseconds: ms), _onSignHoldDone);
+  }
+
+  int _remaining(DateTime? started, int? budget) {
+    if (started == null || budget == null) return 1;
+    final used = now().difference(started).inMilliseconds;
+    final left = budget - used;
+    return left < 1 ? 1 : left;
   }
 
   void _onCountdownTick() {
@@ -118,7 +210,7 @@ class WordPlaybackController extends ChangeNotifier {
     }
     countdownRemaining = remaining - 1;
     notifyListeners();
-    _timer = Timer(countdownStep, _onCountdownTick);
+    _arm(countdownStep.inMilliseconds, _onCountdownTick);
   }
 
   void _playIndex(int index) {
@@ -128,7 +220,7 @@ class WordPlaybackController extends ChangeNotifier {
     notifyListeners();
     final ms = _colorMs(_words[index].taamName);
     final scaled = (ms * speedFactor).round().clamp(1, 60000);
-    _timer = Timer(Duration(milliseconds: scaled), _advance);
+    _arm(scaled, _advance);
   }
 
   void _advance() {
@@ -164,7 +256,7 @@ class WordPlaybackController extends ChangeNotifier {
     }
     _holdingSign = true;
     final ms = (_colorMs(sign.taamName) * speedFactor).round().clamp(1, 60000);
-    _signTimer = Timer(Duration(milliseconds: ms), _onSignHoldDone);
+    _armSign(ms);
   }
 
   int _colorMs(String? taamName) {
@@ -183,6 +275,8 @@ class WordPlaybackController extends ChangeNotifier {
   void _clearDisplayedSign() {
     _signTimer?.cancel();
     _signTimer = null;
+    _signStarted = null;
+    _signBudgetMs = null;
     _holdingSign = false;
     _shownIndex = null;
     displayedSign = null;

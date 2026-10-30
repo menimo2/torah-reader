@@ -8,6 +8,7 @@ import '../../core/hand_signs.dart';
 import '../../data/models/torah_verse.dart';
 import '../../data/models/torah_word.dart';
 import '../../data/sign_settings.dart';
+import 'aliyah_quick_bar.dart';
 import 'hold_to_peek.dart';
 import 'sign_pack_image.dart';
 import 'word_playback.dart';
@@ -56,18 +57,40 @@ class _MasmichScreenState extends ConsumerState<MasmichScreen> {
   }
 
   @override
+  void didUpdateWidget(MasmichScreen oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (_samePassage(oldWidget.verses, widget.verses)) return;
+    _playback.removeListener(_onPlayback);
+    _playback.stop();
+    _playback.addListener(_onPlayback);
+  }
+
+  bool _samePassage(List<TorahVerse> a, List<TorahVerse> b) {
+    if (identical(a, b)) return true;
+    if (a.length != b.length) return false;
+    if (a.isEmpty) return true;
+    return a.first.osisId == b.first.osisId &&
+        a.last.osisId == b.last.osisId;
+  }
+
+  @override
   void dispose() {
     _playback.removeListener(_onPlayback);
     _playback.dispose();
     super.dispose();
   }
 
-  void _toggle() {
+  void _playOrPause() {
+    if (_words.isEmpty) return;
     if (_playback.isActive) {
-      _playback.stop();
-    } else {
-      _playback.start(_words);
+      _playback.pause();
+      return;
     }
+    if (_playback.isPaused) {
+      _playback.resume();
+      return;
+    }
+    _playback.start(_words);
   }
 
   @override
@@ -75,30 +98,37 @@ class _MasmichScreenState extends ConsumerState<MasmichScreen> {
     final settings = ref.watch(signSettingsProvider);
     _playback.shownSignIds = settings.shownIds;
     _playback.colorMsById = settings.colorMs;
-    final counting = _playback.status == PlaybackStatus.countdown;
+    final counting = _playback.showCountdown;
     final sign = _playback.displayedSign;
     final scheme = Theme.of(context).colorScheme;
     final running = _playback.isActive;
+    final paused = _playback.isPaused;
+    final showStop = running || paused;
 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leadingWidth: 124,
+        leadingWidth: showStop ? 104 : 56,
         leading: Padding(
-          padding: const EdgeInsetsDirectional.only(start: 8),
-          child: Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: FilledButton.icon(
-              onPressed: _words.isEmpty ? null : _toggle,
-              icon: Icon(running ? Icons.stop : Icons.play_arrow, size: 18),
-              label: Text(running ? 'עצור' : 'התחל'),
-              style: FilledButton.styleFrom(
-                visualDensity: VisualDensity.compact,
-                padding: const EdgeInsetsDirectional.only(start: 10, end: 12),
-                backgroundColor: running ? scheme.error : scheme.primary,
-                foregroundColor: running ? scheme.onError : scheme.onPrimary,
+          padding: const EdgeInsetsDirectional.only(start: 4),
+          child: Row(
+            children: [
+              _TransportButton(
+                tooltip: running ? 'השהיה' : (paused ? 'המשך' : 'התחל'),
+                icon: running ? Icons.pause : Icons.play_arrow,
+                background: scheme.primary,
+                foreground: scheme.onPrimary,
+                onPressed: _words.isEmpty ? null : _playOrPause,
               ),
-            ),
+              if (showStop)
+                _TransportButton(
+                  tooltip: 'עצור',
+                  icon: Icons.stop,
+                  background: scheme.error,
+                  foreground: scheme.onError,
+                  onPressed: _playback.stop,
+                ),
+            ],
           ),
         ),
         title: Text(widget.title),
@@ -110,37 +140,45 @@ class _MasmichScreenState extends ConsumerState<MasmichScreen> {
           ),
         ],
       ),
-      body: Stack(
+      body: Column(
         children: [
-          HoldToPeek(
-            builder: (context, peeking) {
-              return MasmichFlowText(
-                verses: widget.verses,
-                version: peeking ? TextVersion.full : TextVersion.bare,
-                highlightIndex: _playback.status == PlaybackStatus.playing
-                    ? _playback.currentIndex
-                    : null,
-              );
-            },
-          ),
-          if (counting)
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: Text(
-                  '${_playback.countdownRemaining}',
-                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                        fontSize: 56,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context)
-                            .colorScheme
-                            .primary
-                            .withValues(alpha: 0.45),
+          const AliyahQuickBar(),
+          Expanded(
+            child: Stack(
+              children: [
+                HoldToPeek(
+                  builder: (context, peeking) {
+                    return MasmichFlowText(
+                      key: ValueKey(
+                        widget.verses.map((verse) => verse.osisId).join(','),
                       ),
+                      verses: widget.verses,
+                      version: peeking ? TextVersion.full : TextVersion.bare,
+                      highlightIndex: _playback.highlightedIndex,
+                    );
+                  },
                 ),
-              ),
+                if (counting)
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Text(
+                        '${_playback.countdownRemaining}',
+                        style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                              fontSize: 56,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .primary
+                                  .withValues(alpha: 0.45),
+                            ),
+                      ),
+                    ),
+                  ),
+              ],
             ),
+          ),
         ],
       ),
       bottomNavigationBar: MasmichBottomBar(
@@ -162,6 +200,40 @@ class _MasmichScreenState extends ConsumerState<MasmichScreen> {
 ///
 /// Each word keeps the wider of its bare and full forms, so a maqaf (the
 /// hyphen-like ־) cannot change the line breaks when peeking.
+class _TransportButton extends StatelessWidget {
+  const _TransportButton({
+    required this.tooltip,
+    required this.icon,
+    required this.background,
+    required this.foreground,
+    required this.onPressed,
+  });
+
+  final String tooltip;
+  final IconData icon;
+  final Color background;
+  final Color foreground;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton.filled(
+      tooltip: tooltip,
+      onPressed: onPressed,
+      icon: Icon(icon, size: 22),
+      style: IconButton.styleFrom(
+        backgroundColor: background,
+        foregroundColor: foreground,
+        disabledBackgroundColor: background.withValues(alpha: 0.38),
+        visualDensity: VisualDensity.compact,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        minimumSize: const Size(44, 40),
+        padding: EdgeInsets.zero,
+      ),
+    );
+  }
+}
+
 class MasmichFlowText extends StatelessWidget {
   const MasmichFlowText({
     super.key,

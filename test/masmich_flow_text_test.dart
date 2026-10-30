@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:torah_reader/data/models/torah_verse.dart';
 import 'package:torah_reader/data/models/torah_word.dart';
+import 'package:torah_reader/data/providers.dart';
 import 'package:torah_reader/features/reading/masmich_session.dart';
 
 void main() {
@@ -112,13 +113,53 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    expect(find.widgetWithText(FilledButton, 'התחל'), findsOneWidget);
-    await tester.tap(find.widgetWithText(FilledButton, 'התחל'));
+    expect(find.byTooltip('התחל'), findsOneWidget);
+    await tester.tap(find.byTooltip('התחל'));
     await tester.pump();
-    expect(find.widgetWithText(FilledButton, 'עצור'), findsOneWidget);
+    expect(find.byTooltip('השהיה'), findsOneWidget);
+    expect(find.byTooltip('עצור'), findsOneWidget);
 
-    await tester.tap(find.widgetWithText(FilledButton, 'עצור'));
+    await tester.tap(find.byTooltip('השהיה'));
+    await tester.pump();
+    expect(find.byTooltip('המשך'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('עצור'));
     await tester.pumpAndSettle();
-    expect(find.widgetWithText(FilledButton, 'התחל'), findsOneWidget);
+    expect(find.byTooltip('התחל'), findsOneWidget);
+  });
+
+  testWidgets('aliyah bar switches the saved reading without leaving',
+      (tester) async {
+    SharedPreferences.setMockInitialValues({});
+    await tester.pumpWidget(
+      const ProviderScope(
+        child: MaterialApp(
+          home: MasmichScreen(
+            title: 'בראשית',
+            verses: [
+              TorahVerse(
+                osisId: 'Gen.1.1',
+                book: 'Gen',
+                chapter: 1,
+                verse: 1,
+                words: [TorahWord(fullText: 'בראשית', wordIndex: 0)],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.widgetWithText(FilledButton, 'א'), findsOneWidget);
+    await tester.tap(find.text('ג'));
+    await tester.pumpAndSettle();
+
+    final context = tester.element(find.text('ג'));
+    expect(
+      ProviderScope.containerOf(context).read(passageSelectionProvider).aliyahId,
+      '3',
+    );
+    expect(find.widgetWithText(FilledButton, 'ג'), findsOneWidget);
   });
 }
